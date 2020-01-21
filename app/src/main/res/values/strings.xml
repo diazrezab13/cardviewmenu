@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Pegadaian Digital</string>
+    <string name="default_notification_channel_id">pd_notification_chnl</string>
+    <string name="facebook_app_id">2659089797453043</string>
+    <string name="clevertap_acc_id">TEST-W86-997-K75Z</string>
+    <string name="clevertap_token">TEST-acc-6b0</string>
+    <string name="clevertap_use_google_ad_id">1</string>
+    <string name="GOOGLE_GEO_KEY">AIzaSyDHJkgUjjtBhy3d4JxX7RyABG9V2dXyCpk</string>
+</resources>
