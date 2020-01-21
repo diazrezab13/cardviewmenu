@@ -6,4 +6,12 @@
     <string name="clevertap_token">TEST-acc-6b0</string>
     <string name="clevertap_use_google_ad_id">1</string>
     <string name="GOOGLE_GEO_KEY">AIzaSyDHJkgUjjtBhy3d4JxX7RyABG9V2dXyCpk</string>
+    <string name="txtTabunganEmas">Layanan pembelian dan penjualan emas dengan fasilitas \n
+        titipan dengan harga yang terjangkau. Mulai dari 5000-an, sudah\n bisa punya emas!</string>
+    <string name="txtKredit">Perlu Dana Tunai yang Cepat, Aman &amp; Murah? Jangan jual \n
+        barang kesayangan anda. Gadaikan saja di Pegadaian </string>
+    <string name="txtPinjaman">Jangan biarkan masalah modal menghambat usaha Anda. \n
+        Ajukan pembiayaan yang tepat melalui Pegadaian</string>
+    <string name="txtMPO">Bayar telepon, listrik, air dan tagihan lainnya melalui \n
+        aplikasi Pegadaian Digital</string>
 </resources>
