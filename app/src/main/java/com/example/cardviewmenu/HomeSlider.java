@@ -40,20 +40,20 @@ public class HomeSlider extends FragmentStatePagerAdapter {
         return view == object;
     }
 
-    @Override
-    public Object instantiateItem(ViewGroup container, final int position) {
-
-        final Fragment o = fragmentList.get(position);
-        LayoutInflater inflater = (LayoutInflater) act.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View v = inflater.inflate(R.layout.activity_landing, container, false);
-
-        TextView title = (TextView) v.findViewById(R.id.txtWelcome);
-        title.setText(o.name);
-
-        ((ViewPager) container).addView(v);
-        return v;
-
-    }
+//    @Override
+//    public Object instantiateItem(ViewGroup container, final int position) {
+//
+//        final Fragment o = fragmentList.get(position);
+//        LayoutInflater inflater = (LayoutInflater) act.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+//        View v = inflater.inflate(R.layout.activity_landing, container, false);
+//
+//        TextView title = (TextView) v.findViewById(R.id.txtWelcome);
+//        title.setText(o.name);
+//
+//        ((ViewPager) container).addView(v);
+//        return v;
+//
+//    }
 
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
