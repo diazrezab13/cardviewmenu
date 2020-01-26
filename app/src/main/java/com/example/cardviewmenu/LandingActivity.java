@@ -48,7 +48,7 @@ public class LandingActivity extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public void onClick (View v){
-        Intent newIntent = new Intent(LandingActivity.this, MainActivity.class);
+        Intent newIntent = new Intent(LandingActivity.this, LoginActivity.class);
         startActivity(newIntent);
     }
 

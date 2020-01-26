@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/logo_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/logo_pegadaian" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/inputUsername"
+        android:src="@drawable/profile_navigation" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/inputPassword"
+        android:src="@drawable/password_navigation" />
+
+    <EditText
+        android:id="@+id/inputUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo_input"
+        android:layout_alignLeft="@id/logo_input"
+        android:ems="10"
+        android:hint="Nomor Handphone" />
+
+    <EditText
+        android:id="@+id/inputPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/inputUsername"
+        android:layout_alignLeft="@id/inputUsername"
+        android:layout_marginTop="25dp"
+        android:ems="10"
+        android:hint="Password" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@id/inputPassword"
+        android:layout_alignLeft="@id/inputPassword"
+        android:layout_alignRight="@id/inputPassword"
+        android:layout_marginTop="20dp"
+        android:background="@color/darkGreen"
+        android:onClick="onClick"
+        android:text="MASUK"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/textQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnLogin"
+        android:layout_alignLeft="@id/btnLogin"
+        android:layout_marginTop="25dp"
+        android:text="Belum Punya Akun?"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnLogin"
+        android:layout_alignRight="@id/btnLogin"
+        android:textColor="@color/darkGreen"
+        android:layout_marginTop="25dp"
+        android:text="Registrasi"/>
+</RelativeLayout>
