@@ -15,13 +15,46 @@
             layout="@layout/actionbar_lewati"
             android:id="@+id/incLay"></include>
 
-        <LinearLayout
-            android:id="@+id/homedots"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_centerHorizontal="true"
-            android:orientation="horizontal" />
+    <me.relex.circleindicator.CircleIndicator
+        android:id="@+id/circleIndicator"
+        android:layout_width="100dp"
+        android:layout_height="24dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        app:ci_drawable="@drawable/active_dots"
+        app:ci_drawable_unselected="@drawable/not_active_dots" />
+
+    <ImageView
+        android:id="@+id/leftArrow"
+        android:layout_width="56dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="60dp"
+        android:layout_marginBottom="20dp"
+        android:layout_toLeftOf="@id/circleIndicator"
+        android:onClick="leftClick"
+        android:src="@drawable/left_arrow" />
+
+    <ImageView
+        android:id="@+id/rightArrow"
+        android:layout_width="56dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="60dp"
+        android:layout_marginBottom="20dp"
+        android:layout_toRightOf="@id/circleIndicator"
+        android:onClick="rightClick"
+        android:src="@drawable/right_arrow" />
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/homedots"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:gravity="center"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:orientation="horizontal" />-->
 </RelativeLayout>

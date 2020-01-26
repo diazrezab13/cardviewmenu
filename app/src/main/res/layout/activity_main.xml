@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
     <ScrollView
+        android:id="@+id/layout_scroll"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_alignParentTop="true"
@@ -420,26 +421,7 @@
                     </LinearLayout>
 
                 </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="1750px">
-
-<!--                    <com.google.android.material.bottomnavigation.BottomNavigationView-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_gravity="bottom"-->
-<!--                        app:itemBackground="?attr/colorPrimary"-->
-<!--                        app:itemIconTint="@drawable/selector_bottombar"-->
-<!--                        app:itemTextColor="@drawable/selector_bottombar"-->
-<!--                        app:menu="@menu/bottombar_menu"/>-->
-
-                </LinearLayout>
-
             </RelativeLayout>
         </LinearLayout>
-
     </ScrollView>
-
 </RelativeLayout>
