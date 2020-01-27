@@ -31,4 +31,5 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment:2.0.0'
     implementation 'androidx.navigation:navigation-ui:2.1.0'
     implementation 'me.relex:circleindicator:1.2.2@aar'
+    implementation 'com.android.volley:volley:1.0.0'
 }
