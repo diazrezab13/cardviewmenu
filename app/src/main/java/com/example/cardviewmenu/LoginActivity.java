@@ -30,6 +30,12 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        if (SharedPrefManager.getInstance(this).isLoggedIn()) {
+            finish();
+            startActivity(new Intent(this, MainActivity.class));
+            return;
+        }
+
         editTextUsername = (EditText) findViewById(R.id.inputUsername);
         editTextPassword = (EditText) findViewById(R.id.inputPassword);
 
