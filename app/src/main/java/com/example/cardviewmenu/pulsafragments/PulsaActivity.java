@@ -3,9 +3,13 @@ package com.example.cardviewmenu.pulsafragments;
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
+import com.example.cardviewmenu.MpoActivity;
 import com.example.cardviewmenu.R;
 import com.example.cardviewmenu.pulsafragments.Step1Fragment;
 
@@ -18,6 +22,7 @@ public class PulsaActivity extends AppCompatActivity {
     public static View viewCircleFinishStep3, viewCircleCurrentStep3;
     public static int width = 0;
     public static int position = 0;
+    private Button mBtBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +48,15 @@ public class PulsaActivity extends AppCompatActivity {
             @Override
             public void run() {
                 width = viewHorizontalOff1.getWidth();
+            }
+        });
+
+        mBtBack = (Button) findViewById(R.id.buttonbackpulsa);
+
+        mBtBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackBtnPressed();
             }
         });
     }
@@ -265,6 +279,11 @@ public class PulsaActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        finish();
+        super.onBackPressed();
+    }
+
+    public void onBackBtnPressed() {
         position--;
         if (position == 1) {
             backToStepBiodataDiri();
@@ -273,5 +292,7 @@ public class PulsaActivity extends AppCompatActivity {
         }
         super.onBackPressed();
     }
+
+
 }
 
