@@ -12,35 +12,45 @@
         android:background="@android:color/white"
         >
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="METODE PEMBAYARAN"
+            android:paddingTop="6dp"
+            android:paddingRight="13dp"
+            android:paddingLeft="13dp"
+            android:paddingBottom="13dp"
+            android:textSize="13sp"
+            />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@drawable/background_edit_text_container"
+            android:background="@drawable/background_edit_text_container_2"
             >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nama Ibu *"
+                android:text="G-Cash"
                 android:paddingTop="6dp"
                 android:paddingRight="13dp"
                 android:paddingLeft="13dp"
-                android:textSize="13sp"
+                android:layout_marginLeft="10dp"
+                android:textSize="10sp"
                 />
 
-            <EditText
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/edit_text_nama_ibu"
-                android:singleLine="true"
-                android:maxLines="1"
-                android:background="@android:color/transparent"
-                android:paddingTop="5dp"
+                android:text="Saldo Tidak Mencukupi"
+                android:paddingTop="2dp"
                 android:paddingRight="13dp"
-                android:paddingBottom="5dp"
                 android:paddingLeft="13dp"
-                android:imeOptions="actionNext"
+                android:paddingBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="10sp"
                 />
 
         </LinearLayout>
@@ -56,7 +66,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nama Ayah *"
+                android:text="Metode Pembayaran Lainnya"
                 android:textSize="13sp"
                 android:paddingTop="6dp"
                 android:paddingRight="13dp"

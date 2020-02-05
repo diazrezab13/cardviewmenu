@@ -41,7 +41,7 @@ public class Step2Fragment extends Fragment implements View.OnClickListener {
     }
 
     private void loadComponent() {
-        editTextNamaIbu = (EditText) view.findViewById(R.id.edit_text_nama_ibu);
+//        editTextNamaIbu = (EditText) view.findViewById(R.id.edit_text_nama_ibu);
 //        editTextNamaAyah = (EditText) view.findViewById(R.id.edit_text_nama_ayah);
         buttonNext = (Button) view.findViewById(R.id.button_next_fragment_step_2);
         buttonNext.setOnClickListener(this);
@@ -64,13 +64,13 @@ public class Step2Fragment extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
         if (view == buttonNext) {
             PulsaActivity.goToStepUlasan();
-            String namaIbu = editTextNamaIbu.getText().toString().trim();
+//            String namaIbu = editTextNamaIbu.getText().toString().trim();
 //            String namaAyah = editTextNamaAyah.getText().toString().trim();
             Step3Fragment step3Fragment = new Step3Fragment();
             Bundle bundle = new Bundle();
             bundle.putString("namaLengkap", namaLengkap);
             bundle.putString("alamat", alamat);
-            bundle.putString("namaIbu", namaIbu.isEmpty() ? "-" : namaIbu);
+//            bundle.putString("namaIbu", namaIbu.isEmpty() ? "-" : namaIbu);
 //            bundle.putString("namaAyah", namaAyah.isEmpty() ? "-" : namaAyah);
             step3Fragment.setArguments(bundle);
             getFragmentManager().beginTransaction()
