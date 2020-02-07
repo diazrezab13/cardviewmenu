@@ -18,14 +18,20 @@ import com.example.cardviewmenu.homefragments.page_home5;
 import java.util.ArrayList;
 import java.util.List;
 
+import me.relex.circleindicator.CircleIndicator;
+
 public class LandingActivity extends AppCompatActivity implements View.OnClickListener {
     private ViewPager pg;
     private PagerAdapter pa;
+    CircleIndicator circleIndicator;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_landing);
+
+        circleIndicator = findViewById(R.id.circleIndicator);
 
         List<Fragment> lFragment= new ArrayList<>();
         lFragment.add(new page_home());
@@ -37,11 +43,21 @@ public class LandingActivity extends AppCompatActivity implements View.OnClickLi
         pg = findViewById(R.id.homepage);
         pa = new HomeSlider(getSupportFragmentManager(), lFragment);
         pg.setAdapter(pa);
+        circleIndicator.setViewPager(pg);
     }
 
     @Override
     public void onClick (View v){
-        Intent newIntent = new Intent(LandingActivity.this, MainActivity.class);
+        Intent newIntent = new Intent(LandingActivity.this, LoginActivity.class);
+        finish();
         startActivity(newIntent);
+    }
+
+    public void leftClick (View v){
+        pg.arrowScroll(ViewPager.FOCUS_LEFT);
+    }
+
+    public void rightClick (View v){
+        pg.arrowScroll(ViewPager.FOCUS_RIGHT);
     }
 }
