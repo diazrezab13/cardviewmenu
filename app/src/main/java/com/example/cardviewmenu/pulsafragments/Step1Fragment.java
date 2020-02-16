@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
@@ -70,21 +71,40 @@ public class Step1Fragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         if (view == buttonNext) {
-            String namaLengkap = editTextNamaLengkap.getText().toString().trim();
-//            String alamat = editTextAlamat.getText().toString().trim();
-            PulsaActivity.goToStepOrangTua();
-            Step2Fragment step2Fragment = new Step2Fragment();
-            Bundle bundle = new Bundle();
-            bundle.putString("namaLengkap", namaLengkap.isEmpty() ? "-" : namaLengkap);
-//            bundle.putString("alamat", alamat.isEmpty() ? "-" : alamat);
-            step2Fragment.setArguments(bundle);
-            getFragmentManager().beginTransaction()
-                    .setCustomAnimations(R.anim.slide_in_from_right, R.anim.slide_out_from_right, R.anim.slide_in_from_left, R.anim.slide_out_from_left)
-                    .replace(R.id.frame_layout, step2Fragment)
-                    .addToBackStack(null)
-                    .commit();
+            String nomor = editTextNamaLengkap.getText().toString().trim();
+            String nominal = spinnerPulsa.getSelectedItem().toString();
 
+            boolean InputEmpty = checkInput(nomor, nominal);
+
+            if(!InputEmpty){
+                PulsaActivity.goToStepOrangTua();
+                Step2Fragment step2Fragment = new Step2Fragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("nomor", nomor);
+                bundle.putString("nominal", nominal);
+                step2Fragment.setArguments(bundle);
+                getFragmentManager().beginTransaction()
+                        .setCustomAnimations(R.anim.slide_in_from_right, R.anim.slide_out_from_right, R.anim.slide_in_from_left, R.anim.slide_out_from_left)
+                        .replace(R.id.frame_layout, step2Fragment)
+                        .addToBackStack(null)
+                        .commit();
+            }
         }
+    }
+
+    private boolean checkInput(String nomor, String nominal){
+
+        if (nomor.matches("")) {
+            Toast.makeText(this.getActivity(), "You did not enter a nomor", Toast.LENGTH_SHORT).show();
+            return true;
+        }
+
+        if (nominal.matches("-")) {
+            Toast.makeText(this.getActivity(), "You did not enter nominal", Toast.LENGTH_SHORT).show();
+            return true;
+        }
+
+        return false;
     }
 
     private class Nominal {

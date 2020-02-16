@@ -20,68 +20,72 @@
             android:paddingRight="13dp"
             android:paddingLeft="13dp"
             android:paddingBottom="13dp"
-            android:textSize="13sp"
+            android:textSize="20sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nomor Hp"
+            android:textColor="@android:color/darker_gray"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="13dp"
+            android:textSize="15sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_view_nomor_hp"
+            android:text="0811313112"
+            android:paddingTop="3dp"
+            android:paddingLeft="13dp"
+            android:textSize="15sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nominal"
+            android:textColor="@android:color/darker_gray"
+            android:layout_marginTop="13dp"
+            android:paddingLeft="13dp"
+            android:textSize="15sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_view_nominal"
+            android:text="Jalan Klambir 5 no. 65 Medan"
+            android:paddingTop="3dp"
+            android:paddingLeft="13dp"
+            android:textSize="15sp"
             />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@drawable/background_edit_text_container_2"
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="G-Cash"
-                android:paddingTop="6dp"
-                android:paddingRight="13dp"
-                android:paddingLeft="13dp"
-                android:layout_marginLeft="10dp"
-                android:textSize="10sp"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Saldo Tidak Mencukupi"
-                android:paddingTop="2dp"
-                android:paddingRight="13dp"
-                android:paddingLeft="13dp"
-                android:paddingBottom="10dp"
-                android:layout_marginLeft="10dp"
-                android:textSize="10sp"
-                />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginTop="20dp"
             android:background="@drawable/background_edit_text_container"
-            >
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Metode Pembayaran Lainnya"
-                android:textSize="13sp"
-                android:paddingTop="6dp"
-                android:paddingRight="13dp"
                 android:paddingEnd="13dp"
                 android:paddingLeft="13dp"
+                android:paddingRight="13dp"
                 android:paddingStart="13dp"
-                />
-
-            <ListView
-                android:id="@+id/list"
+                android:paddingTop="6dp"
+                android:text="Pilih Bank"
+                android:textSize="13sp" />
+            <Spinner
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:divider="#b5b5b5"
-                android:dividerHeight="1dp"
-                android:listSelector="@drawable/list_selector" />
+                android:layout_height="40dp"
+                android:id="@+id/bankSpinner">
+
+            </Spinner>
 
         </LinearLayout>
 
