@@ -3,6 +3,8 @@ package com.example.cardviewmenu;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.view.View;
+import android.widget.Button;
 
 public class SharedPrefManager {
 
@@ -55,6 +57,8 @@ public class SharedPrefManager {
                 sharedPreferences.getString(KEY_GENDER, null)
         );
     }
+
+
 
     //this method will logout the user
     public void logout() {

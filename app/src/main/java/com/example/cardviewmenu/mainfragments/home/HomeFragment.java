@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.cardviewmenu.GTicketActivity;
 import com.example.cardviewmenu.MpoActivity;
 import com.example.cardviewmenu.R;
 import com.example.cardviewmenu.SharedPrefManager;
@@ -38,6 +39,15 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(rootView.getContext(), MpoActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button button_GTicket = rootView.findViewById(R.id.buttonGTicket);
+        button_GTicket.setOnClickListener(new View.OnClickListener ()  {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(rootView.getContext(), GTicketActivity.class);
                 startActivity(intent);
             }
         });

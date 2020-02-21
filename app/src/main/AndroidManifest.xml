@@ -22,6 +22,7 @@
         <activity android:name=".MainActivity"/>
         <activity android:name=".MpoActivity"/>
         <activity android:name=".pulsafragments.PulsaActivity"/>
+        <activity android:name=".GTicketActivity"/>
     </application>
 
 </manifest>

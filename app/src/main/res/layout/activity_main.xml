@@ -60,12 +60,24 @@
                         android:id="@+id/buttonLogout"
                         android:layout_width="60dp"
                         android:layout_height="30dp"
-                        android:layout_marginLeft="240dp"
+                        android:layout_alignParentEnd="true"
                         android:layout_marginTop="20dp"
-                        android:layout_toEndOf="@id/TxtUser2"
+                        android:layout_marginEnd="15dp"
                         android:background="@android:color/transparent"
                         android:text="Logout"
                         android:textSize="10dp" />
+
+                    <Button
+                        android:id="@+id/buttonGTicket"
+                        android:layout_width="60dp"
+                        android:layout_height="30dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="12dp"
+                        android:layout_toStartOf="@id/buttonLogout"
+                        android:background="@android:color/transparent"
+                        android:text="@string/btn_gticket"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
 
                 </RelativeLayout>
 
@@ -439,8 +451,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/brightGreen"
-        app:menu="@menu/pds_menu" />
+        android:background="@color/white"
+        app:itemIconTint="@color/darkGreen"
+        android:theme="@style/AppTheme.BottomNavigationView"
+        app:menu="@menu/pds_menu"/>
 
     <fragment
         android:id="@+id/nav_host_fragment"
@@ -456,9 +470,5 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentBottom="true"
-        android:orientation="vertical">
-
-
-    </LinearLayout>
-
+        android:orientation="vertical"/>
 </RelativeLayout>
