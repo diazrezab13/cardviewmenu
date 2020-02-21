@@ -19,9 +19,7 @@ import java.util.ArrayList;
 public class Step2GameFragment extends Fragment implements View.OnClickListener {
 
     private View view;
-    private EditText editTextNamaLengkap;
-    private Spinner spinnerPulsa;
-    private Button button;
+    private Button buttonBack;
 
     public Step2GameFragment() {
         // Required empty public constructor
@@ -58,13 +56,12 @@ public class Step2GameFragment extends Fragment implements View.OnClickListener 
 
     @Override
     public void onClick(View view) {
-//        if (view == buttonPodium) {
-//
-//            Step2Fragment step2Fragment = new Step2Fragment();
-//            getFragmentManager().beginTransaction()
-//                    .replace(R.id.frame_layout, step2Fragment)
-//                    .addToBackStack(null)
-//                    .commit();
-//        }
+        if (view == buttonBack) {
+
+            getFragmentManager().beginTransaction()
+                    .replace(R.id.frame_layout, new Step1GameFragment())
+                    .addToBackStack(null)
+                    .commit();
+        }
     }
 }

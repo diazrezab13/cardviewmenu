@@ -1,4 +1,4 @@
-package com.example.cardviewmenu.pulsafragments;
+package com.example.cardviewmenu.gamefragments;
 
 import android.content.Context;
 import android.database.DataSetObserver;
@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
-import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.example.cardviewmenu.R;
@@ -71,12 +70,18 @@ class LazyAdapter implements ListAdapter {
                 public void onClick(View v) {
                 }
             });
+            TextView peringkat = convertView.findViewById(R.id.txtrangking);
             TextView tittle = convertView.findViewById(R.id.title);
+            TextView point = convertView.findViewById(R.id.txtPoint);
             ImageView imag = convertView.findViewById(R.id.list_image);
-            tittle.setText(subjectData.SubjectName);
-            Picasso.with(context)
-                    .load(subjectData.Image)
-                    .into(imag);
+
+            peringkat.setText(subjectData.Peringkat);
+            tittle.setText(subjectData.Nama);
+            point.setText(subjectData.Point);
+            imag.setImageResource(R.drawable.koin);
+//            Picasso.with(context)
+//                    .load(subjectData.Image)
+//                    .into(imag);
         }
         return convertView;
     }

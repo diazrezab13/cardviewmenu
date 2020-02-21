@@ -24,6 +24,9 @@ public class Step1GameFragment extends Fragment implements View.OnClickListener 
     private EditText editTextNamaLengkap;
     private Spinner spinnerPulsa;
     private Button buttonPodium;
+    private Button buttonTiket;
+    private Button buttonKoin;
+    private Button buttonHowto;
 
     public Step1GameFragment() {
         // Required empty public constructor
@@ -41,6 +44,12 @@ public class Step1GameFragment extends Fragment implements View.OnClickListener 
     private void loadComponent() {
         buttonPodium = (Button) view.findViewById(R.id.buttonPodium);
         buttonPodium.setOnClickListener(this);
+        buttonTiket = (Button) view.findViewById(R.id.buttonTiket);
+        buttonTiket.setOnClickListener(this);
+        buttonKoin = (Button) view.findViewById(R.id.buttonKoin);
+        buttonKoin.setOnClickListener(this);
+        buttonHowto = (Button) view.findViewById(R.id.buttonHowTo);
+        buttonHowto.setOnClickListener(this);
     }
 
     @Override
@@ -49,7 +58,25 @@ public class Step1GameFragment extends Fragment implements View.OnClickListener 
 
             getFragmentManager().beginTransaction()
                     .replace(R.id.frame_layout, new Step2GameFragment())
+                    .addToBackStack(null)
                     .commit();
+        }
+        else if (view == buttonTiket) {
+
+            getFragmentManager().beginTransaction()
+                    .replace(R.id.frame_layout, new Step3GameFragment())
+                    .addToBackStack(null)
+                    .commit();
+        }
+        else if (view == buttonKoin) {
+
+            getFragmentManager().beginTransaction()
+                    .replace(R.id.frame_layout, new Step4GameFragment())
+                    .addToBackStack(null)
+                    .commit();
+        }
+        else if (view == buttonHowto) {
+            Toast.makeText(this.getActivity(), "Ini how to nih iya kan? iya dong? mantap kan? mantap dong?", Toast.LENGTH_LONG).show();
         }
     }
 }
