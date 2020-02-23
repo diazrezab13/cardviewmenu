@@ -23,6 +23,7 @@
         <activity android:name=".MpoActivity"/>
         <activity android:name=".pulsafragments.PulsaActivity"/>
         <activity android:name=".GTicketActivity"/>
+        <activity android:name=".KudaPoniMenuActivity"/>
     </application>
 
 </manifest>

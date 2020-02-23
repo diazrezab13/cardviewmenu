@@ -12,7 +12,7 @@
         android:layout_height="fill_parent"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <LinearLayout
             android:layout_width="fill_parent"
@@ -57,6 +57,19 @@
                         android:textStyle="bold" />
 
                     <Button
+                        android:id="@+id/buttonGTicket"
+                        android:layout_width="60dp"
+                        android:layout_height="30dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="12dp"
+                        android:layout_toStartOf="@id/buttonLogout"
+                        android:background="@android:color/transparent"
+                        android:text="@string/txt_gticket"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:onClick="GTicketClick"/>
+
+                    <Button
                         android:id="@+id/buttonLogout"
                         android:layout_width="60dp"
                         android:layout_height="30dp"
@@ -66,18 +79,6 @@
                         android:background="@android:color/transparent"
                         android:text="Logout"
                         android:textSize="10dp" />
-
-                    <Button
-                        android:id="@+id/buttonGTicket"
-                        android:layout_width="60dp"
-                        android:layout_height="30dp"
-                        android:layout_centerVertical="true"
-                        android:layout_marginEnd="12dp"
-                        android:layout_toStartOf="@id/buttonLogout"
-                        android:background="@android:color/transparent"
-                        android:text="@string/btn_gticket"
-                        android:textSize="10sp"
-                        android:textStyle="bold" />
 
                 </RelativeLayout>
 
@@ -470,5 +471,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentBottom="true"
-        android:orientation="vertical"/>
+        android:orientation="vertical">
+    </LinearLayout>
+
+
 </RelativeLayout>

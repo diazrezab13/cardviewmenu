@@ -1,10 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="HELLO WORLD :)"/>
 
+    <include
+        android:id="@+id/actionGTicket"
+        layout="@layout/actionbar_gticket"></include>
+    <RelativeLayout
+        android:id="@+id/layoutGTicket"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:clickable="true"
+        android:layout_centerInParent="true"
+        android:background="@drawable/background_button_grey">
+
+        <ImageView
+            android:id="@+id/imgGTicket"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/gticketnew"/>
+
+        <TextView
+            android:id="@+id/txtGTicket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imgGTicket"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="15dp"
+            android:text="20 G-Ticket" />
+    </RelativeLayout>
+    <Button
+        android:id="@+id/buttonPlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/layoutGTicket"
+        android:onClick="onClickPlay"
+        android:text="Play Kuda Poni"/>
 </RelativeLayout>

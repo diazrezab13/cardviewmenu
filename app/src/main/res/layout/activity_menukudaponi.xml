@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/kudaponi_background">
+
+    <include
+        android:id="@+id/actionGTicket"
+        layout="@layout/actionbar_kudaponi"
+        android:layout_width="175dp"
+        android:layout_height="38dp"></include>
+
+    <RelativeLayout
+        android:id="@+id/layoutMenu"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@id/actionGTicket"
+        android:layout_marginTop="80dp">
+
+        <ImageView
+            android:id="@+id/menuPoint"
+            android:layout_width="75dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/poin" />
+
+        <ImageView
+            android:id="@+id/menuTicket"
+            android:layout_width="75dp"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/menuPoint"
+            android:src="@drawable/gticketnew" />
+
+        <ImageView
+            android:id="@+id/menuLeaderboard"
+            android:layout_width="75dp"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@id/menuTicket"
+            android:src="@drawable/podium" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imgKudaPoni"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/kudaponi_logo"/>
+    <Button
+        android:id="@+id/buttonPlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imgKudaPoni"
+        android:layout_alignLeft="@id/imgKudaPoni"
+        android:layout_alignRight="@id/imgKudaPoni"
+        android:text="@string/txt_kudaponi"
+        android:layout_marginTop="10dp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonPlay"
+        android:layout_alignLeft="@id/buttonPlay"
+        android:layout_alignRight="@id/buttonPlay"
+        android:text="@string/txt_howtoplay"/>
+
+</RelativeLayout>
