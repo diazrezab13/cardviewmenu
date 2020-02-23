@@ -16,6 +16,7 @@
             android:layout_height="30dp"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="10dp"
+            android:onClick="onClickBack2"
             android:background="@color/basicGreen"
             android:drawableLeft="@drawable/left_arrow_2"
             android:textSize="10dp"

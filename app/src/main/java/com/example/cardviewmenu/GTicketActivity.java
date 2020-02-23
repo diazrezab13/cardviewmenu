@@ -18,4 +18,10 @@ public class GTicketActivity extends AppCompatActivity {
         finish();
         startActivity(newIntent);
     }
+
+    public void onClickBack (View v){
+        Intent newIntent = new Intent(GTicketActivity.this, MainActivity.class);
+        finish();
+        startActivity(newIntent);
+    }
 }
