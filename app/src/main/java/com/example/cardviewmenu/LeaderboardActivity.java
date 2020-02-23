@@ -47,12 +47,12 @@ public class LeaderboardActivity extends AppCompatActivity {
         circleIndicator.setViewPager(pg);
     }
 
-//    @Override
-//    public void onClick (View v){
-//        Intent newIntent = new Intent(LeaderboardActivity.this, LoginActivity.class);
-//        finish();
-//        startActivity(newIntent);
-//    }
+
+    public void onClickBack3 (View v){
+        Intent newIntent = new Intent(LeaderboardActivity.this, KudaPoniMenuActivity.class);
+        finish();
+        startActivity(newIntent);
+    }
 
     public void leftClick (View v){
         pg.arrowScroll(ViewPager.FOCUS_LEFT);

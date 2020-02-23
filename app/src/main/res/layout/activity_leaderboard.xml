@@ -22,6 +22,7 @@
             android:background="@color/basicGreen"
             android:drawableLeft="@drawable/left_arrow_2"
             android:textSize="10dp"
+            android:onClick="onClickBack3"
             style="?android:attr/borderlessButtonStyle"
             />
 
