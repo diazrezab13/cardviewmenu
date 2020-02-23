@@ -8,9 +8,7 @@
 
     <include
         android:id="@+id/actionGTicket"
-        layout="@layout/actionbar_kudaponi"
-        android:layout_width="175dp"
-        android:layout_height="38dp"></include>
+        layout="@layout/actionbar_kudaponi"></include>
 
     <RelativeLayout
         android:id="@+id/layoutMenu"
@@ -38,7 +36,8 @@
             android:layout_width="75dp"
             android:layout_height="match_parent"
             android:layout_toLeftOf="@id/menuTicket"
-            android:src="@drawable/podium" />
+            android:src="@drawable/podium"
+            android:onClick="onClickLeader"/>
     </RelativeLayout>
 
     <ImageView

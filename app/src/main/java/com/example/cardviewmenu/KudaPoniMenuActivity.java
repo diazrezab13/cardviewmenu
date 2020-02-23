@@ -19,4 +19,10 @@ public class KudaPoniMenuActivity extends AppCompatActivity {
         finish();
         startActivity(newIntent);
     }
+
+    public void onClickLeader (View v){
+        Intent newIntent = new Intent(KudaPoniMenuActivity.this, LeaderboardActivity.class);
+        finish();
+        startActivity(newIntent);
+    }
 }

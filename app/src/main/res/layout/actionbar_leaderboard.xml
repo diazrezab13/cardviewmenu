@@ -1,8 +1,5 @@
-<merge xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="65dp"
@@ -11,12 +8,11 @@
         android:outlineProvider="bounds">
 
         <Button
-            android:id="@+id/buttonBack2"
+            android:id="@+id/buttonBack3"
             android:layout_width="40dp"
             android:layout_height="30dp"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="10dp"
-            android:onClick="onClickBack2"
             android:background="@color/basicGreen"
             android:drawableLeft="@drawable/left_arrow_2"
             android:textSize="10dp"
@@ -29,7 +25,7 @@
             android:layout_height="30dp"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="20dp"
-            android:text="@string/txt_kudaponi"
+            android:text="@string/txt_leaderboard"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"
