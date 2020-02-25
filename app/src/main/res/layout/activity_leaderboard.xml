@@ -60,12 +60,16 @@
             android:layout_centerInParent="true"
             android:layout_marginBottom="20dp"
             android:gravity="center" />
-
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/layoutiklan">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycleLeaderboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"/>
     </RelativeLayout>
 
 </RelativeLayout>

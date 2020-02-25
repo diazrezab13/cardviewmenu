@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/background_button_darkgrey"
+        android:layout_gravity="center">
+        <TextView
+            android:id="@+id/userRank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:layout_marginLeft="15dp"
+            android:layout_centerVertical="true"/>
+        <TextView
+            android:id="@+id/userLead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nama"
+            android:layout_toRightOf="@id/userRank"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:id="@+id/userPoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1107"
+            android:textStyle="bold"
+            android:textColor="@color/gold"
+            android:layout_toRightOf="@id/userLead"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="100dp"/>
+
+        <ImageView
+            android:id="@+id/imgCoin"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_toRightOf="@+id/userPoint"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/poin"/>
+    </RelativeLayout>
+</LinearLayout>

@@ -6,17 +6,17 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.cardviewmenu.homefragments.page_home;
-import com.example.cardviewmenu.homefragments.page_home2;
-import com.example.cardviewmenu.homefragments.page_home3;
-import com.example.cardviewmenu.homefragments.page_home4;
-import com.example.cardviewmenu.homefragments.page_home5;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.Volley;
 import com.example.cardviewmenu.iklanfragments.iklan_num1;
 import com.example.cardviewmenu.iklanfragments.iklan_num2;
 import com.example.cardviewmenu.iklanfragments.iklan_num3;
+import com.example.cardviewmenu.leaderboardfragment.LeaderboardAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +27,9 @@ public class LeaderboardActivity extends AppCompatActivity {
     private ViewPager pg;
     private PagerAdapter pa;
     CircleIndicator circleIndicator;
+    RecyclerView recyclerView;
+    LeaderboardAdapter adapter;
+//    RequestQueue queue; //to load JSON data
 
 
     @Override
@@ -45,6 +48,13 @@ public class LeaderboardActivity extends AppCompatActivity {
         pa = new HomeSlider(getSupportFragmentManager(), lFragment);
         pg.setAdapter(pa);
         circleIndicator.setViewPager(pg);
+
+        recyclerView =findViewById(R.id.recycleLeaderboard);
+        adapter = new LeaderboardAdapter(this);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+//        queue = Volley.newRequestQueue(this); //to load JSON data
+//        queue.add(getFashion("harry%20potter")); //to load JSON data
     }
 
 
