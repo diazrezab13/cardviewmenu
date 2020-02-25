@@ -6,63 +6,47 @@
     android:orientation="horizontal"
     android:padding="5dip" >
 
-    <!--  ListRow Left sied Thumbnail image -->
-    <LinearLayout android:id="@+id/thumbnail"
+    <TextView
+        android:id="@+id/txtrangking"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="3dip"
-        android:layout_alignParentLeft="true"
-        android:layout_marginRight="5dip">
-
-        <RadioButton
-            android:id="@+id/radiobutton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-             />
-
-        <ImageView
-            android:id="@+id/list_image"
-            android:layout_width="50dip"
-            android:layout_height="50dip"
-            android:src="@drawable/profile"/>
-
-    </LinearLayout>
+        android:layout_centerVertical="true"
+        android:text="5"
+        android:layout_marginRight="10dip"
+        android:textSize="18dip"
+        android:textColor="#10bcc9"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/thumbnail"
-        android:layout_toRightOf="@+id/thumbnail"
+        android:layout_toEndOf="@id/txtrangking"
         android:text="Rihanna Love the way lie"
+        android:layout_centerVertical="true"
         android:textColor="#040404"
         android:typeface="sans"
         android:textSize="15dip"
         android:textStyle="bold"/>
 
     <TextView
-        android:id="@+id/artist"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/title"
-        android:textColor="#343434"
-        android:textSize="10dip"
-        android:layout_marginTop="1dip"
-        android:layout_toRightOf="@+id/thumbnail"
-        android:text="Just gona stand there and ..." />
-
-    <TextView
-        android:id="@+id/duration"
+        android:id="@+id/txtPoint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@id/title"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@id/list_image"
         android:gravity="right"
-        android:text="5:45"
-        android:layout_marginRight="5dip"
-        android:textSize="10dip"
+        android:text="1000"
+        android:layout_marginRight="10dip"
+        android:textSize="18dip"
         android:textColor="#10bcc9"
         android:textStyle="bold"/>
+
+    <ImageView
+        android:id="@+id/list_image"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/koin"/>
 
 </RelativeLayout>

@@ -61,15 +61,20 @@
             android:layout_marginBottom="20dp"
             android:gravity="center" />
     </RelativeLayout>
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/layoutiklan">
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycleLeaderboard"
-            android:layout_width="wrap_content"
+        android:padding="10dp"
+        android:layout_marginTop="240dp">
+
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"/>
-    </RelativeLayout>
+            android:divider="@color/gainsBoro"
+            android:dividerHeight="5dp"
+            android:listSelector="@drawable/list_selector" />
+
+    </LinearLayout>
 
 </RelativeLayout>

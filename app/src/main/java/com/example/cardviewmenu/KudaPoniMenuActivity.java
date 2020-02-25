@@ -6,6 +6,8 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.cardviewmenu.leaderboardfragment.LeaderboardActivity;
+
 public class KudaPoniMenuActivity extends AppCompatActivity {
 
     @Override

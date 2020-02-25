@@ -1,66 +1,102 @@
 package com.example.cardviewmenu.leaderboardfragment;
 
 import android.content.Context;
+import android.database.DataSetObserver;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ListAdapter;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.cardviewmenu.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class LeaderboardAdapter extends RecyclerView.Adapter<LeaderboardAdapter.ViewHolder> {
+class LeaderboardAdapter implements ListAdapter {
+    ArrayList<Leaderboard> arrayList;
     Context context;
-    ArrayList<Leaderboard> listLeader;
 
-    public LeaderboardAdapter(Context context){
+    public LeaderboardAdapter(Context context, ArrayList<Leaderboard> arrayList) {
+        this.arrayList = arrayList;
         this.context = context;
-        listLeader = new ArrayList<>();
-    }
-
-    public void setListLeader(ArrayList<Leaderboard> listLeader){
-        this.listLeader = listLeader;
-        notifyDataSetChanged();
-    }
-
-    @NonNull
-    @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.list_leaderboard, parent, false);
-        return new ViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Leaderboard leader = listLeader.get(position);
-        holder.txtRank.setText(leader.userRank);
-        holder.txtUser.setText(leader.userNama);
-        holder.txtPoint.setText(leader.userPoin);
+    public boolean areAllItemsEnabled() {
+        return false;
     }
 
     @Override
-    public int getItemCount() {
-        return listLeader.size();
+    public boolean isEnabled(int position) {
+        return true;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    @Override
+    public void registerDataSetObserver(DataSetObserver observer) {
+    }
 
-        public TextView txtRank;
-        public TextView txtUser;
-        public TextView txtPoint;
-        public ImageView imgCoin;
+    @Override
+    public void unregisterDataSetObserver(DataSetObserver observer) {
+    }
 
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            txtRank = itemView.findViewById(R.id.userRank);
-            txtUser = itemView.findViewById(R.id.userLead);
-            txtPoint = itemView.findViewById(R.id.userPoint);
-            imgCoin = itemView.findViewById(R.id.imgCoin);
+    @Override
+    public int getCount() {
+        return arrayList.size();
+    }
+
+    @Override
+    public Object getItem(int position) {
+        return position;
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
+
+    @Override
+    public boolean hasStableIds() {
+        return false;
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        Leaderboard subjectData = arrayList.get(position);
+        if (convertView == null) {
+            LayoutInflater layoutInflater = LayoutInflater.from(context);
+            convertView = layoutInflater.inflate(R.layout.list_row, null);
+            convertView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                }
+            });
+            TextView peringkat = convertView.findViewById(R.id.txtrangking);
+            TextView tittle = convertView.findViewById(R.id.title);
+            TextView point = convertView.findViewById(R.id.txtPoint);
+            ImageView imag = convertView.findViewById(R.id.list_image);
+
+            peringkat.setText(subjectData.Peringkat);
+            tittle.setText(subjectData.Nama);
+            point.setText(subjectData.Point);
+            imag.setImageResource(R.drawable.koin);
         }
+        return convertView;
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return position;
+    }
+
+    @Override
+    public int getViewTypeCount() {
+        return arrayList.size();
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return false;
     }
 }
