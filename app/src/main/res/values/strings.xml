@@ -22,5 +22,15 @@
     <string name="txt_gticket">G-Ticket</string>
     <string name="txt_howtoplay">How to Play</string>
     <string name="txt_leaderboard">Leaderboard</string>
+    <string name="txt_agree">Setuju</string>
     <string name="txt_gpoint">G-Point</string>
+    <string name="txt_title_termncon">TERMS &amp; CONDITIONS KUDA PONI\n</string>
+    <string name="txt_termncon"> 1. Kuda Poni hanya dapat diakses oleh pengguna aplikasi Pegadaian Digital Service yang memiliki G-Ticket.\n\n
+        2. G-Ticket diperoleh dari melakukan transaksi minimum 50.000.\n\n
+        3. G-Ticket ditukarkan dengan bermain KUDA PONI untuk mendapatkan point.\n\n
+        4. Kuda poni adalah kuis untuk pengguna menjawab pertanyaan dari dua jawaban yang tersedia\n\n
+        5. Jika pengguna dapat menjawab maka mendapatkan point, sebaliknya jika user gagal tidak mendapatkan point.\n\n
+        6. Point dapat dikumpulkan dan direedem dengan voucher yang tersedia untuk discount transaksi selanjutnya.\n\n
+        7. G-Ticket dan G-Point berlaku selama satu tahun akan direset di awal tahun.</string>
+
 </resources>
