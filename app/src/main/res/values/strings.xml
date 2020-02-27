@@ -22,4 +22,5 @@
     <string name="txt_gticket">G-Ticket</string>
     <string name="txt_howtoplay">How to Play</string>
     <string name="txt_leaderboard">Leaderboard</string>
+    <string name="txt_gpoint">G-Point</string>
 </resources>
