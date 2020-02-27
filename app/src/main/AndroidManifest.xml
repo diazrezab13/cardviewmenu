@@ -25,6 +25,7 @@
         <activity android:name=".GTicketActivity"/>
         <activity android:name=".KudaPoniMenuActivity"/>
         <activity android:name=".leaderboardfragment.LeaderboardActivity"/>
+        <activity android:name=".GPointActivity"/>
     </application>
 
 </manifest>

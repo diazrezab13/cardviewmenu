@@ -62,4 +62,10 @@ public class KudaPoniMenuActivity extends AppCompatActivity {
         startActivity(newIntent);
     }
 
+    public void onClickPoin (View v){
+        Intent newIntent = new Intent(KudaPoniMenuActivity.this, GPointActivity.class);
+        finish();
+        startActivity(newIntent);
+    }
+
 }

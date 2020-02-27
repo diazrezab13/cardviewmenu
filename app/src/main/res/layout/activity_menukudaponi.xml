@@ -23,7 +23,8 @@
             android:layout_width="75dp"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
-            android:src="@drawable/poin" />
+            android:src="@drawable/poin"
+            android:onClick="onClickPoin"/>
 
         <ImageView
             android:id="@+id/menuTicket"
