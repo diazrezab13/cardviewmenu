@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
+import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,6 +28,7 @@ import com.example.cardviewmenu.URLs;
 import com.example.cardviewmenu.User;
 import com.example.cardviewmenu.VolleySingleton;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -45,10 +48,11 @@ public class Step3Fragment extends Fragment {
     private String bank;
     private String user_id;
     private Button buttonDone;
+    private ImageView imagebank;
     ExpandableListView expandableListView;
     ExpandableListAdapter expandableListAdapter;
     List<String> expandableListTitle;
-    HashMap<String, List<String>> expandableListDetail;
+    private HashMap<String, List<String>> expandableListDetail;
 
     public Step3Fragment() {
         // Required empty public constructor
@@ -66,55 +70,21 @@ public class Step3Fragment extends Fragment {
 
     private void loadComponent() {
         User user = SharedPrefManager.getInstance(getContext()).getUser();
-
-        expandableListView = (ExpandableListView) view.findViewById(R.id.expandableListView);
-        expandableListDetail = ExpendableListDataDump.getData();
-        expandableListTitle = new ArrayList<String>(expandableListDetail.keySet());
-        expandableListAdapter = new CustomExpandableListAdapter(getContext(), expandableListTitle, expandableListDetail);
-        expandableListView.setAdapter(expandableListAdapter);
-        expandableListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
-
-            @Override
-            public void onGroupExpand(int groupPosition) {
-                Toast.makeText(getContext(),
-                        expandableListTitle.get(groupPosition) + " List Expanded.",
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        expandableListView.setOnGroupCollapseListener(new ExpandableListView.OnGroupCollapseListener() {
-
-            @Override
-            public void onGroupCollapse(int groupPosition) {
-                Toast.makeText(getContext(),
-                        expandableListTitle.get(groupPosition) + " List Collapsed.",
-                        Toast.LENGTH_SHORT).show();
-
-            }
-        });
-
-        expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
-            @Override
-            public boolean onChildClick(ExpandableListView parent, View v,
-                                        int groupPosition, int childPosition, long id) {
-                Toast.makeText(
-                        getContext(),
-                        expandableListTitle.get(groupPosition)
-                                + " -> "
-                                + expandableListDetail.get(
-                                expandableListTitle.get(groupPosition)).get(
-                                childPosition), Toast.LENGTH_SHORT
-                ).show();
-                return false;
-            }
-        });
-
-
         Bundle bundle = getArguments();
         nomor = bundle.getString("nomor");
         nominal = bundle.getString("nominal");
         bank = bundle.getString("bank");
+        imagebank = view.findViewById(R.id.list_image);
+
+        if (bank == "MANDIRI"){
+            imagebank.setImageResource(R.drawable.mandiri);
+        }else if (bank == "BNI"){
+            imagebank.setImageResource(R.drawable.bni);
+        }else
+            imagebank.setImageResource(R.drawable.bri_va);
+
         user_id = String.valueOf(user.getId());
+        getData(bank);
 
         buttonDone = (Button) view.findViewById(R.id.button_done_fragment);
         buttonDone.setOnClickListener(new View.OnClickListener() {
@@ -125,6 +95,105 @@ public class Step3Fragment extends Fragment {
                 getActivity().finish();
             }
         });
+    }
+
+    private void getData(final String bank) {
+        final HashMap<String, List<String>> expandableList = new HashMap<String, List<String>>();
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URLs.GET_BANK, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+                try {
+                    //converting response to json object
+                    JSONObject obj = new JSONObject(response);
+
+                    //if no error in response
+                    if (!obj.getBoolean("error")) {
+                        Toast.makeText(view.getContext(), obj.getString("message"), Toast.LENGTH_SHORT).show();
+
+                        JSONArray maindata = obj.getJSONArray("data");
+
+                        for (int i = 0; i < maindata.length(); i++) {
+                            JSONArray array = (JSONArray) maindata.getJSONArray(i);
+
+                            for(int j = 0; j < array.length();j++){
+                                JSONObject object = (JSONObject) array.get(j);
+                                JSONArray object2 = object.getJSONArray("CHILD");
+
+                                List<String> detail = new ArrayList<String>();
+                                for(int k = 0; k < object2.length();k++){
+                                    detail.add(object2.getString(k));
+                                }
+
+                                expandableList.put(object.getString("HEADER"), detail);
+                            }
+                        }
+
+                        expandableListView = (ExpandableListView) view.findViewById(R.id.expandableListView);
+                        expandableListDetail = expandableList;
+                        expandableListTitle = new ArrayList<String>(expandableListDetail.keySet());
+                        expandableListAdapter = new CustomExpandableListAdapter(getContext(), expandableListTitle, expandableListDetail);
+                        expandableListView.setAdapter(expandableListAdapter);
+                        expandableListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
+
+                                @Override
+                                public void onGroupExpand(int groupPosition) {
+                                    Toast.makeText(getContext(),
+                                            expandableListTitle.get(groupPosition) + " List Expanded.",
+                                            Toast.LENGTH_SHORT).show();
+                                }
+                            });
+
+                            expandableListView.setOnGroupCollapseListener(new ExpandableListView.OnGroupCollapseListener() {
+
+                                @Override
+                                public void onGroupCollapse(int groupPosition) {
+                                    Toast.makeText(getContext(),
+                                            expandableListTitle.get(groupPosition) + " List Collapsed.",
+                                            Toast.LENGTH_SHORT).show();
+
+                                }
+                            });
+
+                            expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+                                @Override
+                                public boolean onChildClick(ExpandableListView parent, View v,
+                                                            int groupPosition, int childPosition, long id) {
+                                    Toast.makeText(
+                                            getContext(),
+                                            expandableListTitle.get(groupPosition)
+                                                    + " -> "
+                                                    + expandableListDetail.get(
+                                                    expandableListTitle.get(groupPosition)).get(
+                                                    childPosition), Toast.LENGTH_SHORT
+                                    ).show();
+                                    return false;
+                                }
+                            });
+
+                    } else {
+                        Toast.makeText(getContext(), obj.getString("message"), Toast.LENGTH_SHORT).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("bank", bank);
+                return params;
+            }
+        };
+
+        VolleySingleton.getInstance(getContext()).addToRequestQueue(stringRequest);
     }
 
     private void insertPulsaData(final String nominal, final String user_id, final String nomor) {

@@ -80,7 +80,9 @@ class LeaderboardAdapter implements ListAdapter {
             peringkat.setText(subjectData.Peringkat);
             tittle.setText(subjectData.Nama);
             point.setText(subjectData.Point);
-            imag.setImageResource(R.drawable.koin);
+            Picasso.with(context)
+                    .load(subjectData.Image)
+                    .into(imag);
         }
         return convertView;
     }
