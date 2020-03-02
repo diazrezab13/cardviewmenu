@@ -5,6 +5,14 @@
     android:layout_height="match_parent"
     android:background="@drawable/kudaponi_background">
 
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        android:layout_width="50dip"
+        android:layout_height="180dip"
+        android:layout_marginTop="475dp"
+        android:layout_centerHorizontal="true"
+        android:indeterminate="true"/>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="65dp"
@@ -59,7 +67,7 @@
         android:layout_below="@id/imgGTicket"
         android:layout_centerInParent="true"
         android:layout_marginTop="10dp"
-        android:text="20 G-Ticket" />
+        android:text="" />
 
 </RelativeLayout>
 

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -79,6 +80,8 @@ public class LeaderboardActivity extends AppCompatActivity {
         User user = SharedPrefManager.getInstance(getApplicationContext()).getUser();
         final String user_id = String.valueOf(user.getId());
 
+        final ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar1);
+        progressBar.setVisibility(View.VISIBLE);
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URLs.GET_RANKING, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -105,6 +108,7 @@ public class LeaderboardActivity extends AppCompatActivity {
                         LeaderboardAdapter customAdapter = new LeaderboardAdapter(getApplicationContext(), arrayList);
                         list.setAdapter(customAdapter);
 
+                        progressBar.setVisibility(View.GONE);
                         Toast.makeText(getApplicationContext(), obj.getString("message"), Toast.LENGTH_SHORT).show();
                     } else {
                         Toast.makeText(getApplicationContext(), obj.getString("message"), Toast.LENGTH_SHORT).show();
@@ -117,6 +121,7 @@ public class LeaderboardActivity extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
+                        progressBar.setVisibility(View.GONE);
                         Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 }) {
