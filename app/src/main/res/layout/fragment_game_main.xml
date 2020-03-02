@@ -175,7 +175,5 @@
                 android:textSize="14dp" />
 
         </RelativeLayout>
-
     </LinearLayout>
-
 </RelativeLayout>

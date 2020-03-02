@@ -1,16 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center"
+    >
 
-    <TextView
-        android:id="@+id/text_profile"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"/>
+        android:layout_height="326dp"
+        android:layout_gravity="center|top"
+        android:background="@drawable/profile_background">
+
+
+        <ImageView
+            android:id="@+id/imgProfile"
+            android:layout_width="30dp"
+            android:layout_height="80dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ic_launcher_round" />
+
+        <RelativeLayout
+            android:id="@+id/layoutGcashBox"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/imgProfile"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/background_gcash">
+
+            <TextView
+                android:id="@+id/txtGCash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:text="G-Cash"
+                android:textColor="@color/darkGrey" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtGCash"
+                android:layout_centerHorizontal="true"
+                android:text="Rp. 0" />
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/listViewProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layoutGcashBox"
+            android:layout_marginTop="10dp" />
+    </RelativeLayout>
 </LinearLayout>
