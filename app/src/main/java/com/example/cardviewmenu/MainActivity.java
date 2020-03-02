@@ -10,6 +10,7 @@ import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -19,6 +20,9 @@ public class MainActivity extends AppCompatActivity {
     private Button mBtLaunchMpoActivity;
     private Button mBtLogout;
     private TextView TextViewUsername;
+    ListView listView;
+    TextView textView;
+    String[] listItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
