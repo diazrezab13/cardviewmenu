@@ -73,6 +73,7 @@
             android:layout_height="wrap_content"
             android:divider="@color/gainsBoro"
             android:dividerHeight="5dp"
+            android:background="@drawable/background_button_darkgrey"
             android:listSelector="@drawable/list_selector" />
 
     </LinearLayout>

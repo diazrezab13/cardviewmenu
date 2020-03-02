@@ -68,4 +68,10 @@ public class KudaPoniMenuActivity extends AppCompatActivity {
         startActivity(newIntent);
     }
 
+    public void onClickTicket (View v){
+        Intent newIntent = new Intent(KudaPoniMenuActivity.this, GTicketActivity.class);
+        finish();
+        startActivity(newIntent);
+    }
+
 }
