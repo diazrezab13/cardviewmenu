@@ -39,8 +39,6 @@ public class Step1Fragment extends Fragment implements View.OnClickListener {
         return view;
     }
 
-
-
     private void loadComponent() {
         editTextNamaLengkap = (EditText) view.findViewById(R.id.edit_text_nama_lengkap);
         spinnerPulsa = (Spinner) view.findViewById(R.id.pulsaSpinner);
