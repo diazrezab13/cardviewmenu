@@ -124,10 +124,9 @@ public class KudaPoniMenuActivity extends AppCompatActivity {
         VolleySingleton.getInstance(getApplicationContext()).addToRequestQueue(stringRequest);
     }
 
-    private void onClickTicket (View v){
+    public void onClickTicket(View view) {
         Intent newIntent = new Intent(KudaPoniMenuActivity.this, GTicketActivity.class);
         finish();
         startActivity(newIntent);
     }
-
 }
