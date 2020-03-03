@@ -70,6 +70,10 @@ public class GTicketActivity extends AppCompatActivity {
                         progressBar.setVisibility(View.GONE);
                         Toast.makeText(getApplicationContext(), obj.getString("message"), Toast.LENGTH_SHORT).show();
                     } else {
+                        txtTicketRemain = findViewById(R.id.txtGTicket);
+                        txtTicketRemain.setText("0 G-Ticket");
+
+                        progressBar.setVisibility(View.GONE);
                         Toast.makeText(getApplicationContext(), obj.getString("message"), Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
@@ -118,6 +122,7 @@ public class GTicketActivity extends AppCompatActivity {
                         finish();
                         startActivity(newIntent);
                     } else {
+                        progressBar.setVisibility(View.GONE);
                         Toast.makeText(getApplicationContext(), obj.getString("message"), Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {

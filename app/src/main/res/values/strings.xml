@@ -32,6 +32,7 @@
         5. Jika pengguna dapat menjawab maka mendapatkan point, sebaliknya jika user gagal tidak mendapatkan point.\n\n
         6. Point dapat dikumpulkan dan direedem dengan voucher yang tersedia untuk discount transaksi selanjutnya.\n\n
         7. G-Ticket dan G-Point berlaku selama satu tahun akan direset di awal tahun.</string>
+
     <string-array name="array_profile">
         <item>Data Nasabah</item>
         <item>Data NPWP</item>
@@ -40,6 +41,11 @@
         <item>Rekening Saya</item>
         <item>Rekening Favorit</item>
         <item>Voucher</item>
+    </string-array>
+
+    <string-array name="array_profile_bottom">
+        <item>Hubungi Kami</item>
+        <item>Keluar</item>
     </string-array>
 
 </resources>

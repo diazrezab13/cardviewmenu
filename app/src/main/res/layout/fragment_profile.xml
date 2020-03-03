@@ -1,28 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/gainsBoro">
 
     <RelativeLayout
         android:id="@+id/atas"
         android:layout_width="match_parent"
-        android:layout_height="326dp"
+        android:layout_height="240dp"
         android:layout_gravity="center|top"
         android:background="@drawable/profile_background">
 
         <ImageView
             android:id="@+id/imgProfile"
-            android:layout_width="30dp"
-            android:layout_height="80dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:src="@mipmap/ic_launcher_round" />
 
+        <TextView
+            android:id="@+id/txtUserProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/imgProfile"
+            android:text="nama"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white" />
+
         <RelativeLayout
             android:id="@+id/layoutGcashBox"
-            android:layout_width="300dp"
+            android:layout_width="350dp"
             android:layout_height="50dp"
-            android:layout_below="@+id/imgProfile"
+            android:layout_below="@+id/txtUserProfile"
+            android:layout_marginTop="10dp"
             android:layout_centerHorizontal="true"
             android:background="@drawable/background_gcash">
 
@@ -43,11 +55,28 @@
                 android:text="Rp. 0" />
         </RelativeLayout>
     </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/atas">
 
         <ListView
             android:id="@+id/listViewProfile"
             android:layout_width="match_parent"
-            android:layout_height="fill_parent"
-            android:layout_below="@id/atas"
+            android:layout_height="350dp"
+            android:background="@color/white"
+            android:layout_marginTop="5dp"
             />
+
+        <ListView
+            android:id="@+id/listViewProfile2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/listViewProfile"
+            android:background="@color/white"
+            android:layout_marginTop="20dp"
+            />
+
+    </RelativeLayout>
+
 </RelativeLayout>
