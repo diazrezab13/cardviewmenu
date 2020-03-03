@@ -32,7 +32,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -53,6 +56,8 @@ public class Step3Fragment extends Fragment {
     ExpandableListAdapter expandableListAdapter;
     List<String> expandableListTitle;
     private HashMap<String, List<String>> expandableListDetail;
+    private TextView txtNominal;
+    private TextView txtTanggal;
 
     public Step3Fragment() {
         // Required empty public constructor
@@ -75,6 +80,15 @@ public class Step3Fragment extends Fragment {
         nominal = bundle.getString("nominal");
         bank = bundle.getString("bank");
         imagebank = view.findViewById(R.id.list_image);
+        Date c = Calendar.getInstance().getTime();
+        SimpleDateFormat df = new SimpleDateFormat("dd MMM yyyy HH:mm");
+        String formattedDate = df.format(c);
+
+        txtNominal = (TextView) view.findViewById(R.id.text_view_total_pembayaran);
+        txtTanggal = (TextView) view.findViewById(R.id.text_view_batas_pembayaran);
+
+        txtNominal.setText(nominal);
+        txtTanggal.setText(formattedDate);
 
         if (bank == "MANDIRI"){
             imagebank.setImageResource(R.drawable.mandiri);
@@ -99,6 +113,7 @@ public class Step3Fragment extends Fragment {
 
     private void getData(final String bank) {
         final HashMap<String, List<String>> expandableList = new HashMap<String, List<String>>();
+
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URLs.GET_BANK, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -109,7 +124,7 @@ public class Step3Fragment extends Fragment {
 
                     //if no error in response
                     if (!obj.getBoolean("error")) {
-                        Toast.makeText(view.getContext(), obj.getString("message"), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity().getApplicationContext(), obj.getString("message"), Toast.LENGTH_SHORT).show();
 
                         JSONArray maindata = obj.getJSONArray("data");
 
@@ -172,7 +187,7 @@ public class Step3Fragment extends Fragment {
                             });
 
                     } else {
-                        Toast.makeText(getContext(), obj.getString("message"), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity().getApplicationContext(), obj.getString("message"), Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -182,7 +197,7 @@ public class Step3Fragment extends Fragment {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity().getApplicationContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 }) {
             @Override
@@ -197,7 +212,9 @@ public class Step3Fragment extends Fragment {
     }
 
     private void insertPulsaData(final String nominal, final String user_id, final String nomor) {
-
+        String[] Nominal1 = nominal.split("Rp ");
+        String[] Nominal2 = Nominal1[1].split("-");
+        final String Nominal = Nominal2[0];
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URLs.INSERT_PULSA, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -208,10 +225,10 @@ public class Step3Fragment extends Fragment {
 
                     //if no error in response
                     if (!obj.getBoolean("error")) {
-                        Toast.makeText(getContext(), obj.getString("message"), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity().getApplicationContext(), obj.getString("message"), Toast.LENGTH_SHORT).show();
 
                     } else {
-                        Toast.makeText(getContext(), obj.getString("message"), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity().getApplicationContext(), obj.getString("message"), Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -221,7 +238,7 @@ public class Step3Fragment extends Fragment {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity().getApplicationContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 }) {
             @Override
@@ -229,7 +246,7 @@ public class Step3Fragment extends Fragment {
                 Map<String, String> params = new HashMap<>();
                 params.put("user_id", user_id);
                 params.put("nomor", nomor);
-                params.put("nominal", nominal);
+                params.put("nominal", Nominal);
                 return params;
             }
         };

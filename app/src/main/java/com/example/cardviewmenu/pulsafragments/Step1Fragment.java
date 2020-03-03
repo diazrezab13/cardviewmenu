@@ -48,16 +48,11 @@ public class Step1Fragment extends Fragment implements View.OnClickListener {
         ArrayList<Nominal> contacts = new ArrayList<>();
 
         contacts.add(new Nominal("-", "-"));
-        contacts.add(new Nominal("Rp 10.000-", "1"));
-        contacts.add(new Nominal("Rp 20.000-", "2"));
-        contacts.add(new Nominal("Rp 30.000-", "3"));
-        contacts.add(new Nominal("Rp 40.000-", "4"));
-        contacts.add(new Nominal("Rp 50.000-", "5"));
-        contacts.add(new Nominal("Rp 60.000-", "6"));
-        contacts.add(new Nominal("Rp 70.000-", "7"));
-        contacts.add(new Nominal("Rp 80.000-", "8"));
-        contacts.add(new Nominal("Rp 90.000-", "9"));
-        contacts.add(new Nominal("Rp 100.000-", "10"));
+        contacts.add(new Nominal("Rp 20000-", "1"));
+        contacts.add(new Nominal("Rp 25000-", "2"));
+        contacts.add(new Nominal("Rp 50000-", "3"));
+        contacts.add(new Nominal("Rp 100000-", "4"));
+        contacts.add(new Nominal("Rp 200000-", "5"));
 
         ArrayAdapter<Nominal> adapter =
                 new ArrayAdapter<Nominal>(getActivity().getApplicationContext(),  android.R.layout.simple_spinner_dropdown_item, contacts);
