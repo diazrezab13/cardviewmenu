@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Toast;
 
 public class GameActivity extends AppCompatActivity {
 
@@ -15,11 +16,12 @@ public class GameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-        URL = "https://kelompoktigab.000webhostapp.com/keltigagame/index.html";
+        URL = "https://kelompoktigab.000webhostapp.com/keltigabaru/index.html";
         wv=(WebView)findViewById(R.id.web);
         wv.getSettings().setJavaScriptEnabled(true);
         wv.loadUrl(URL);
         wv.setWebViewClient(new WebViewClient());
+        Toast.makeText(getApplicationContext(),"tesasjdklaj", Toast.LENGTH_SHORT).show();
     }
 
     @Override

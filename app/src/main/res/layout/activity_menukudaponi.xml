@@ -56,7 +56,8 @@
         android:layout_alignLeft="@id/imgKudaPoni"
         android:layout_alignRight="@id/imgKudaPoni"
         android:text="@string/txt_kudaponi"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:onClick="onClickPlay"/>
     <Button
         android:id="@+id/buttonTerm"
         android:layout_width="wrap_content"
