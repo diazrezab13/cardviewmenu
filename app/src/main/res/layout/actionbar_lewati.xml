@@ -1,7 +1,7 @@
 <merge xmlns:android="http://schemas.android.com/apk/res/android">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="65dp"
         android:layout_alignParentTop="true"
         android:background="@color/white"
         android:outlineProvider="bounds">
@@ -11,14 +11,14 @@
             android:layout_width="125dp"
             android:layout_height="40dp"
             android:layout_marginLeft="300dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="20dp"
             android:gravity="center"
             android:onClick="onClick"
-            android:text="Lewati"
+            android:text="LEWATI"
             android:textAlignment="gravity"
-            android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="14sp"
             android:textStyle="bold" />
     </RelativeLayout>
 </merge>

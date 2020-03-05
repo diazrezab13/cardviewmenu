@@ -24,7 +24,7 @@
                 android:paddingRight="13dp"
                 android:paddingStart="13dp"
                 android:paddingTop="6dp"
-                android:text="Nama Lengkap *"
+                android:text="Masukan Nomor Anda"
                 android:textSize="13sp" />
 
             <EditText
@@ -39,6 +39,7 @@
                 android:paddingRight="13dp"
                 android:paddingTop="5dp"
                 android:imeOptions="actionNext"
+                android:inputType="number"
                 />
 
         </LinearLayout>
@@ -50,9 +51,19 @@
             android:background="@drawable/background_edit_text_container"
             android:orientation="vertical">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="13dp"
+                android:paddingLeft="13dp"
+                android:paddingRight="13dp"
+                android:paddingStart="13dp"
+                android:paddingTop="6dp"
+                android:text="Pilih Nominal"
+                android:textSize="13sp" />
             <Spinner
                 android:layout_width="fill_parent"
-                android:layout_height="60dp"
+                android:layout_height="40dp"
                 android:id="@+id/pulsaSpinner">
 
             </Spinner>

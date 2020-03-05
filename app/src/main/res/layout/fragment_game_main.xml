@@ -1,0 +1,179 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context="com.example.cardviewmenu.pulsafragments.PulsaActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/gainsBoro">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/gainsBoro"
+            android:orientation="horizontal"
+            android:gravity="end">
+
+            <RelativeLayout
+                android:layout_width="60dp"
+                android:layout_height="60dp">
+
+            <ImageView
+                android:id="@+id/ImagePodium"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/podium" />
+
+            <Button
+                android:id="@+id/buttonPodium"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="60dp"
+                android:layout_height="60dp">
+
+                <ImageView
+                    android:id="@+id/ImageTiket"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/podium" />
+
+                <Button
+                    android:id="@+id/buttonTiket"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="60dp"
+                android:layout_height="60dp">
+
+                <ImageView
+                    android:id="@+id/ImageKoin"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/podium" />
+
+                <Button
+                    android:id="@+id/buttonKoin"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:background="@color/gainsBoro"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/Imageawan1"
+                android:layout_width="150dp"
+                android:layout_height="220dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="-50dp"
+                android:src="@drawable/awan"
+                />
+
+            <ImageView
+                android:id="@+id/Imageawan2"
+                android:layout_width="180dp"
+                android:layout_height="250dp"
+                android:layout_marginTop="-40dp"
+                android:layout_marginLeft="100dp"
+                android:src="@drawable/awan"
+                />
+
+            <ImageView
+                android:id="@+id/Imageawan3"
+                android:layout_width="150dp"
+                android:layout_height="220dp"
+                android:layout_marginTop="-10dp"
+                android:layout_marginLeft="300dp"
+                android:src="@drawable/awan"
+                />
+
+            <ImageView
+                android:id="@+id/Imagepohon1"
+                android:layout_width="150dp"
+                android:layout_height="220dp"
+                android:layout_marginTop="250dp"
+                android:layout_marginLeft="-30dp"
+                android:src="@drawable/pohon"
+                />
+
+            <ImageView
+                android:id="@+id/Imagepohon2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="150dp"
+                android:layout_marginLeft="300dp"
+                android:src="@drawable/pohon"
+                />
+
+            <ImageView
+                android:id="@+id/ImageRumput"
+                android:layout_width="150dp"
+                android:layout_height="220dp"
+                android:layout_marginTop="480dp"
+                android:layout_marginLeft="300dp"
+                android:src="@drawable/rumput"
+                />
+
+            <ImageView
+                android:id="@+id/ImageRumput2"
+                android:layout_width="150dp"
+                android:layout_height="220dp"
+                android:layout_marginTop="500dp"
+                android:src="@drawable/rumput"
+                />
+
+            <ImageView
+                android:id="@+id/ImageKudaPoni"
+                android:layout_width="175dp"
+                android:layout_height="220dp"
+                android:layout_marginLeft="140dp"
+                android:layout_marginTop="200dp"
+                android:src="@drawable/kuda_poni" />
+
+            <Button
+                android:id="@+id/buttonPlay"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="440dp"
+                android:background="@android:color/darker_gray"
+                android:text="Play Kuda Poni"
+                android:textSize="14dp" />
+
+            <Button
+                android:id="@+id/buttonHowTo"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="490dp"
+                android:background="@android:color/darker_gray"
+                android:text="How To Play"
+                android:textSize="14dp" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

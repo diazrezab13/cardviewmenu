@@ -1,16 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/gainsBoro">
 
-    <TextView
-        android:id="@+id/text_profile"
+    <RelativeLayout
+        android:id="@+id/atas"
         android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:layout_gravity="center|top"
+        android:background="@drawable/profile_background">
+
+        <ImageView
+            android:id="@+id/imgProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ic_launcher_round" />
+
+        <TextView
+            android:id="@+id/txtUserProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/imgProfile"
+            android:text="nama"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white" />
+
+        <RelativeLayout
+            android:id="@+id/layoutGcashBox"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/txtUserProfile"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/background_gcash">
+
+            <TextView
+                android:id="@+id/txtGCash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:text="G-Cash"
+                android:textColor="@color/darkGrey" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtGCash"
+                android:layout_centerHorizontal="true"
+                android:text="Rp. 0" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"/>
-</LinearLayout>
+        android:layout_below="@id/atas">
+
+        <ListView
+            android:id="@+id/listViewProfile"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:background="@color/white"
+            android:layout_marginTop="5dp"
+            />
+
+        <ListView
+            android:id="@+id/listViewProfile2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/listViewProfile"
+            android:background="@color/white"
+            android:layout_marginTop="20dp"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>

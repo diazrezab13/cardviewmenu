@@ -4,5 +4,9 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
     </style>
+    <style name="AppTheme.BottomNavigationView" >
+        <item name="colorPrimary">@color/darkGreen</item>
+        <item name="android:textColorPrimary">@color/black</item>
+    </style>
 
 </resources>

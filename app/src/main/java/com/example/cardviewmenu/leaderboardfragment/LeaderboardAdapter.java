@@ -1,4 +1,4 @@
-package com.example.cardviewmenu.pulsafragments;
+package com.example.cardviewmenu.leaderboardfragment;
 
 import android.content.Context;
 import android.database.DataSetObserver;
@@ -7,17 +7,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
-import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.example.cardviewmenu.R;
 import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
-class LazyAdapter implements ListAdapter {
-    ArrayList<SubjectData> arrayList;
+
+class LeaderboardAdapter implements ListAdapter {
+    ArrayList<Leaderboard> arrayList;
     Context context;
 
-    public LazyAdapter(Context context, ArrayList<SubjectData> arrayList) {
+    public LeaderboardAdapter(Context context, ArrayList<Leaderboard> arrayList) {
         this.arrayList = arrayList;
         this.context = context;
     }
@@ -62,7 +63,7 @@ class LazyAdapter implements ListAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        SubjectData subjectData = arrayList.get(position);
+        Leaderboard subjectData = arrayList.get(position);
         if (convertView == null) {
             LayoutInflater layoutInflater = LayoutInflater.from(context);
             convertView = layoutInflater.inflate(R.layout.list_row, null);
@@ -71,9 +72,14 @@ class LazyAdapter implements ListAdapter {
                 public void onClick(View v) {
                 }
             });
+            TextView peringkat = convertView.findViewById(R.id.txtrangking);
             TextView tittle = convertView.findViewById(R.id.title);
+            TextView point = convertView.findViewById(R.id.txtPoint);
             ImageView imag = convertView.findViewById(R.id.list_image);
-            tittle.setText(subjectData.SubjectName);
+
+            peringkat.setText(subjectData.Peringkat);
+            tittle.setText(subjectData.Nama);
+            point.setText(subjectData.Point);
             Picasso.with(context)
                     .load(subjectData.Image)
                     .into(imag);

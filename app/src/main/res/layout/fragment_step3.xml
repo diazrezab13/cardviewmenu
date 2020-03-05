@@ -1,93 +1,142 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
     android:orientation="vertical"
-    tools:context="com.example.cardviewmenu.pulsafragments.PulsaActivity"
-    >
-
-    <!--biodata diri-->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Biodata Diri"
-        android:textSize="18sp"
-        android:textColor="@color/colorPrimaryDark"
-        />
+    tools:context="com.example.cardviewmenu.pulsafragments.PulsaActivity">
 
     <TextView
+        android:id="@+id/totalbayar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nama Lengkap"
-        android:textColor="@android:color/darker_gray"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        />
+        android:text="Jumlah Pembayaran"
+        android:textColor="@color/basicGreen"
+        android:textSize="12dp" />
 
     <TextView
+        android:id="@+id/text_view_total_pembayaran"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/text_view_nama_lengkap"
-        android:text="Yudi Setiawan"
+        android:layout_below="@id/totalbayar"
+        android:layout_centerHorizontal="true"
         android:paddingTop="3dp"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Alamat"
-        android:textColor="@android:color/darker_gray"
-        android:layout_marginTop="13dp"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/text_view_alamat"
-        android:text="Jalan Klambir 5 no. 65 Medan"
-        android:paddingTop="3dp"
-        />
-
-    <!--orang tua-->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Orang Tua"
-        android:textSize="18sp"
+        android:text="Rp. 20.000-"
         android:textColor="@color/colorPrimaryDark"
+        android:textSize="20dp"
+
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/bataspembayaran"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_view_total_pembayaran"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Batas Waktu Pembayaran"
+        android:textColor="@color/basicGreen"
+        android:textSize="12dp" />
+
+    <TextView
+        android:id="@+id/text_view_batas_pembayaran"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bataspembayaran"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="3dp"
+        android:text="5 Februari 2020 12:53"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20dp"
+
+        android:textStyle="bold" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_below="@id/text_view_batas_pembayaran"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/background_edit_text_container"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/list_image"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/bri_va" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/thumbnail"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/thumbnail"
+            android:text="Silahkan Bayar Tagihan Anda melalui"
+            android:textColor="@color/black"
+            android:textSize="15dip"
+            android:textStyle="bold"
+            android:typeface="sans" />
+
+        <TextView
+            android:id="@+id/textvabank"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="1dip"
+            android:layout_toRightOf="@+id/thumbnail"
+            android:text="Nomor Virtual Account BRI"
+            android:textColor="@color/basicGreen"
+            android:textSize="10dip" />
+
+        <TextView
+            android:id="@+id/nomorva"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textvabank"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="1dip"
+            android:layout_toRightOf="@+id/thumbnail"
+            android:text="282638008111313112"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="16dip"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="220dp">
+
+        <ExpandableListView
+            android:id="@+id/expandableListView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:divider="@android:color/darker_gray"
+            android:dividerHeight="0.5dp"
+            android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/button_done_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/activity_vertical_margin"
-        />
+        android:background="@drawable/background_button"
+        android:padding="@dimen/activity_vertical_margin"
+        android:layout_alignParentBottom="true"
+        android:text="Done"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white" />
+</RelativeLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nama Ibu"
-        android:textColor="@android:color/darker_gray"
-        android:layout_marginTop="10dp"
-        />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/text_view_nama_ibu"
-        android:text="Rosmaini"
-        android:paddingTop="3dp"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nama Ayah"
-        android:layout_marginTop="13dp"
-        android:textColor="@android:color/darker_gray"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/text_view_nama_ayah"
-        android:text="Mardi"
-        android:paddingTop="3dp"
-        />
-
-</LinearLayout>
