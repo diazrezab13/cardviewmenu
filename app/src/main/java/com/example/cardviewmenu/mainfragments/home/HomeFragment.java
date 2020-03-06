@@ -52,29 +52,5 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        Button button_Logout = rootView.findViewById(R.id.buttonLogout);
-        button_Logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SharedPrefManager.getInstance(rootView.getContext()).logout();
-                ((Activity) rootView.getContext()).finish();
-            }
-        });
-
-
-
-
-
-
-
-//        homeViewModel = ViewModelProviders.of(this).get(HomeViewModel.class);
-
-//        final TextView textView = root.findViewById(R.id.text_home);
-//        homeViewModel.getText().observe(this, new Observer<String>() {
-//            @Override
-//            public void onChanged(@Nullable String s) {
-//                textView.setText(s);
-//            }
-//        });
         return rootView;
     }}
