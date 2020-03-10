@@ -79,7 +79,7 @@ public class LoginActivity extends AppCompatActivity {
                                 Toast.makeText(getApplicationContext(), obj.getString("message"), Toast.LENGTH_SHORT).show();
 
                                 //getting the user from the response
-                                JSONObject userJson = obj.getJSONObject("user");
+                                JSONObject userJson = obj.getJSONObject("data");
 
                                 //creating a new user object
                                 User user = new User(
