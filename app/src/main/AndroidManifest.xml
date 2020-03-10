@@ -26,6 +26,8 @@
         <activity android:name=".KudaPoniMenuActivity"/>
         <activity android:name=".leaderboardfragment.LeaderboardActivity"/>
         <activity android:name=".GPointActivity"/>
+        <activity android:name=".voucherfragments.VoucherActivity"/>
+        <activity android:name=".RedeemActivity"/>
     </application>
 
 </manifest>
