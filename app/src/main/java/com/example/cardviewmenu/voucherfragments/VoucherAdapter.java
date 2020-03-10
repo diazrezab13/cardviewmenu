@@ -1,6 +1,8 @@
 package com.example.cardviewmenu.voucherfragments;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.database.DataSetObserver;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,8 +10,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.cardviewmenu.GPointActivity;
 import com.example.cardviewmenu.R;
+import com.example.cardviewmenu.RedeemActivity;
 import com.example.cardviewmenu.leaderboardfragment.Leaderboard;
 import com.example.cardviewmenu.voucherfragments.Voucher;
 import com.squareup.picasso.Picasso;
@@ -65,15 +70,11 @@ class VoucherAdapter implements ListAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        Voucher subjectData = arrayList.get(position);
+        final Voucher subjectData = arrayList.get(position);
         if (convertView == null) {
             LayoutInflater layoutInflater = LayoutInflater.from(context);
             convertView = layoutInflater.inflate(R.layout.list_voucher, null);
-            convertView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                }
-            });
+
             TextView point = convertView.findViewById(R.id.txtPoint);
             ImageView imag = convertView.findViewById(R.id.imgVoucher);
             TextView name = convertView.findViewById((R.id.txtTitle));
@@ -83,6 +84,15 @@ class VoucherAdapter implements ListAdapter {
             Picasso.with(context)
                     .load(subjectData.image)
                     .into(imag);
+
+            convertView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context, subjectData.name + " selected", Toast.LENGTH_LONG).show();
+                    Intent newIntent = new Intent(context, RedeemActivity.class);
+                    context.startActivity(newIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                }
+            });
         }
         return convertView;
     }

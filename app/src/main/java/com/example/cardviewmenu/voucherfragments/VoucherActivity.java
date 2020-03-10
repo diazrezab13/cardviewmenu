@@ -1,27 +1,31 @@
 package com.example.cardviewmenu.voucherfragments;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.cardviewmenu.GPointActivity;
 import com.example.cardviewmenu.R;
+import com.example.cardviewmenu.SharedPrefManager;
 import com.example.cardviewmenu.voucherfragments.Voucher;
 import com.example.cardviewmenu.voucherfragments.VoucherAdapter;
 
 import java.util.ArrayList;
 
 public class VoucherActivity extends AppCompatActivity {
-    private ListView list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_voucher);
 
-        list = findViewById(R.id.listvoucher);
+        final ListView list = (ListView) findViewById(R.id.listvoucher);
         ArrayList<Voucher> arrayList = getAllVouchers();
         VoucherAdapter customAdapter = new VoucherAdapter(getApplicationContext(), arrayList);
         list.setAdapter(customAdapter);
