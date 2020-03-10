@@ -7,6 +7,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.cardviewmenu.voucherfragments.VoucherActivity;
+
 public class GPointActivity extends AppCompatActivity {
 
     TextView txtPoint;
@@ -30,7 +32,7 @@ public class GPointActivity extends AppCompatActivity {
     }
 
     public void onClickRedeem (View v){
-        Intent newIntent = new Intent(GPointActivity.this, RedeemActivity.class);
+        Intent newIntent = new Intent(GPointActivity.this, VoucherActivity.class);
         finish();
         startActivity(newIntent);
     }
