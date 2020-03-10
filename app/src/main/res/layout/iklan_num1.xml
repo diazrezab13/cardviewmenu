@@ -4,14 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="175dp">
 
-    <TextView
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="175dp"
-        android:text="IKLAN 1"
-        android:textAlignment="center"
         android:gravity="center"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/iklan1"
+        android:onClick="onClickIklan1"
         />
 </LinearLayout>

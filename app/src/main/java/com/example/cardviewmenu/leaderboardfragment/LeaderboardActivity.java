@@ -28,6 +28,7 @@ import com.example.cardviewmenu.VolleySingleton;
 import com.example.cardviewmenu.iklanfragments.iklan_num1;
 import com.example.cardviewmenu.iklanfragments.iklan_num2;
 import com.example.cardviewmenu.iklanfragments.iklan_num3;
+import com.example.cardviewmenu.voucherfragments.VoucherActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -72,6 +73,12 @@ public class LeaderboardActivity extends AppCompatActivity {
 
     public void onClickBack3 (View v){
         Intent newIntent = new Intent(LeaderboardActivity.this, KudaPoniMenuActivity.class);
+        finish();
+        startActivity(newIntent);
+    }
+
+    public void onClickIklan1 (View v){
+        Intent newIntent = new Intent(LeaderboardActivity.this, VoucherActivity.class);
         finish();
         startActivity(newIntent);
     }
