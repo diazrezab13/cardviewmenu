@@ -90,6 +90,10 @@ class VoucherAdapter implements ListAdapter {
                 public void onClick(View v) {
                     Toast.makeText(context, subjectData.name + " selected", Toast.LENGTH_LONG).show();
                     Intent newIntent = new Intent(context, RedeemActivity.class);
+                    newIntent.putExtra("POINT", subjectData.point);
+                    newIntent.putExtra("NAME", subjectData.name);
+                    newIntent.putExtra("IMAGE", subjectData.image);
+                    newIntent.putExtra("TERMS", subjectData.terms);
                     context.startActivity(newIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                 }
             });
