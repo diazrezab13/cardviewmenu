@@ -49,24 +49,28 @@
         android:layout_centerHorizontal="true"
         android:orientation="horizontal">
         <Button
+            android:id="@+id/btnAll"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
             android:text="All"
             android:background="@drawable/background_button_grey"/>
         <Button
+            android:id="@+id/btnFNB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="F&amp;B"
             android:layout_marginRight="10dp"
             android:background="@drawable/background_button_grey"/>
         <Button
+            android:id="@+id/btnGold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Gold"
             android:layout_marginRight="10dp"
             android:background="@drawable/background_button_grey"/>
         <Button
+            android:id="@+id/btnGadai"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Gadai"
@@ -82,11 +86,9 @@
         android:layout_marginTop="20dp">
 
         <ListView
-            android:id="@+id/list"
+            android:id="@+id/listvoucher"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:divider="@color/gainsBoro"
-            android:dividerHeight="20dp"
             android:listSelector="@drawable/list_selector" />
 
     </LinearLayout>
