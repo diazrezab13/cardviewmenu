@@ -48,4 +48,12 @@
         <item>Keluar</item>
     </string-array>
 
+    <string-array name="array_pulsa">
+        <item>Rp 20.000-</item>
+        <item>Rp 25.000-</item>
+        <item>Rp 50.000-</item>
+        <item>Rp 100.000-</item>
+        <item>Rp 200.000-</item>
+    </string-array>
+
 </resources>
