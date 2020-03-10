@@ -96,15 +96,11 @@ public class LeaderboardActivity extends AppCompatActivity {
                         final ListView list = findViewById(R.id.list);
                         JSONObject maindata = obj.getJSONObject("data");
                         JSONArray globalrankarray = maindata.getJSONArray("global_rank");
-//                        JSONObject userrank = maindata.getJSONObject("current_user_rank");
-
                         ArrayList<Leaderboard> arrayList = new ArrayList<Leaderboard>();
-
                         for (int i = 0; i < globalrankarray.length(); i++) {
                             JSONObject object = (JSONObject) globalrankarray.get(i);
                             arrayList.add(new Leaderboard(object.getString("rank"), object.getString("username"), object.getString("total_point"),"https://testdiaz.000webhostapp.com/koin.jpeg"));
                         }
-//                        arrayList.add(new Leaderboard(userrank.getString("rank"), userrank.getString("username"), userrank.getString("total_point"),"https://www.tutorialspoint.com/java/images/java-mini-logo.jpg"));
                         LeaderboardAdapter customAdapter = new LeaderboardAdapter(getApplicationContext(), arrayList);
                         list.setAdapter(customAdapter);
 

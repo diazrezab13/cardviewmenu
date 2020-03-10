@@ -28,4 +28,10 @@ public class GPointActivity extends AppCompatActivity {
         finish();
         startActivity(newIntent);
     }
+
+    public void onClickRedeem (View v){
+        Intent newIntent = new Intent(GPointActivity.this, RedeemActivity.class);
+        finish();
+        startActivity(newIntent);
+    }
 }
