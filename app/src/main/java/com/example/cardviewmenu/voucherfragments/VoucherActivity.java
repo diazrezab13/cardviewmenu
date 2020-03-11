@@ -84,7 +84,7 @@ public class VoucherActivity extends AppCompatActivity {
 
     private ArrayList<Voucher> getAllVouchers() {
         ArrayList<Voucher> arrayList = new ArrayList<Voucher>();
-        arrayList.add(new Voucher("300", "https://testdiaz.000webhostapp.com/disc_biaya_sewa_modal.jpeg","Discount Biaya Sewa Modal", "Discount Biaya Sewa Modal nih"));
+        arrayList.add(new Voucher("300", "https://testdiaz.000webhostapp.com/disc_pulsa.jpeg","Discount Pulsa", "Discount Pulsa nih"));
         arrayList.add(new Voucher("150", "https://testdiaz.000webhostapp.com/disc_gold_bag.jpeg","Gold Back", "Gold Back nih"));
         arrayList.add(new Voucher("200", "https://testdiaz.000webhostapp.com/disc_the_gade.jpeg","The Gade Coffee and Gold","The Gade Coffee and Gold nih"));
         return arrayList;
@@ -104,7 +104,7 @@ public class VoucherActivity extends AppCompatActivity {
 
     private ArrayList<Voucher> getGadaiVouchers() {
         ArrayList<Voucher> arrayList = new ArrayList<Voucher>();
-        arrayList.add(new Voucher("300", "https://testdiaz.000webhostapp.com/disc_biaya_sewa_modal.jpeg","Discount Biaya Sewa Modal", "Discount Biaya Sewa Modal nih"));
+        arrayList.add(new Voucher("300", "https://testdiaz.000webhostapp.com/disc_pulsa.jpeg","Discount Pulsa", "Discount Pulsa nih"));
         return arrayList;
     }
 }

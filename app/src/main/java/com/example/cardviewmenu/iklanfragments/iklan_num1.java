@@ -22,7 +22,7 @@ public class iklan_num1 extends Fragment {
 
         ImageView imageView = (ImageView) vghome.findViewById(R.id.imgiklan1);
         Picasso.with(getActivity().getApplicationContext())
-                .load("https://testdiaz.000webhostapp.com/disc_biaya_sewa_modal.jpeg")
+                .load("https://testdiaz.000webhostapp.com/disc_pulsa.jpeg")
                 .into(imageView);
         return vghome;
     }
