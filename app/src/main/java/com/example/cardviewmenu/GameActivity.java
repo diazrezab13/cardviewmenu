@@ -2,7 +2,9 @@ package com.example.cardviewmenu;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
@@ -25,29 +27,12 @@ public class GameActivity extends AppCompatActivity {
         wv.getSettings().setJavaScriptEnabled(true);
         wv.loadUrl(URL);
         wv.setWebViewClient(new WebViewClient());
-        Toast.makeText(getApplicationContext(),"Jawab Pertanyaannya Untuk Mendapatkan Hadiah !", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(),"Jawab Pertanyaan & Dapatkan Hadiah !", Toast.LENGTH_SHORT).show();
     }
 
-    @Override
-    public void onBackPressed() {
-        if (doubleBackToExitPressedOnce) {
-            super.onBackPressed();
-            return;
-        }
-
-        if(wv.canGoBack()){
-            wv.goBack();
-        }
-
-        this.doubleBackToExitPressedOnce = true;
-        Toast.makeText(this, "Mainkan Hingga Akhir Untuk Mendapatkan Hadiah !", Toast.LENGTH_SHORT).show();
-
-        new Handler().postDelayed(new Runnable() {
-
-            @Override
-            public void run() {
-                doubleBackToExitPressedOnce=false;
-            }
-        }, 10);
+    public void onClickBack (View v){
+        Intent newIntent = new Intent(GameActivity.this, GTicketActivity.class);
+        finish();
+        startActivity(newIntent);
     }
 }

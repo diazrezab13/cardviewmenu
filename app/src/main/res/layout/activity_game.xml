@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,8 +7,30 @@
     android:layout_height="match_parent"
     tools:context=".GameActivity">
 
+    <RelativeLayout
+        android:id="@+id/lHeader2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/basicGreen"
+        android:outlineProvider="bounds">
+
+        <Button
+            android:id="@+id/buttonBack1"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/basicGreen"
+            android:drawableLeft="@drawable/left_arrow_2"
+            android:onClick="onClickBack"
+            android:textSize="10dp" />
+
+    </RelativeLayout>
+
     <WebView
         android:id="@+id/web"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="555dp" />
 </RelativeLayout>
