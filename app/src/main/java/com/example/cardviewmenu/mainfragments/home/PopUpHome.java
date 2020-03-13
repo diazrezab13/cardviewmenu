@@ -38,7 +38,6 @@ public class PopUpHome {
         popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
 
         //Initialize the elements of our window, install the handler
-
         TextView test2 = popupView.findViewById(R.id.titleText);
         test2.setText("Selamat, kamu dapat 1 G-Ticket!");
 
@@ -46,11 +45,7 @@ public class PopUpHome {
         buttonEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                //As an example, display the message
-//                Toast.makeText(view.getContext(), "Wow, popup action button", Toast.LENGTH_SHORT).show();
                 popupWindow.dismiss();
-
             }
         });
 
