@@ -20,11 +20,16 @@
     <string name="title_profile">Profil</string>
     <string name="txt_kudaponi">Kuda Poni</string>
     <string name="txt_gticket">G-Ticket</string>
+    <string name="txt_registration">Registrasi</string>
     <string name="txt_howtoplay">How to Play</string>
     <string name="txt_leaderboard">Leaderboard</string>
     <string name="txt_agree">Setuju</string>
     <string name="txt_gpoint">G-Point</string>
     <string name="txt_redeem">Redeem Voucher</string>
+    <string name="txt_notifotp">Silahkan tunggu,
+        kode verifikasi akan dikirimkan ke nomor 081313131313</string>
+    <string name="txt_notifwarning">Kami akan mengirimkan e-mail verifikasi, silahkan cek inbox anda untuk melakukan verifikasi.
+    Anda tidak bisa melakukan login menggunakan email, jika email belum diverifikasi</string>
     <string name="txt_title_termncon">TERMS &amp; CONDITIONS KUDA PONI\n</string>
     <string name="txt_termncon"> 1. Kuda Poni hanya dapat diakses oleh pengguna aplikasi Pegadaian Digital Service yang memiliki G-Ticket.\n\n
         2. G-Ticket diperoleh dari melakukan transaksi minimum 50.000.\n\n

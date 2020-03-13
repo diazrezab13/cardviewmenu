@@ -99,7 +99,8 @@
             android:textColor="@color/darkGreen"
             android:layout_marginTop="60dp"
             android:layout_marginLeft="5dp"
-            android:text="Registrasi"/>
+            android:text="Registrasi"
+            android:onClick="onClickRegist"/>
     </LinearLayout>
 
 </RelativeLayout>

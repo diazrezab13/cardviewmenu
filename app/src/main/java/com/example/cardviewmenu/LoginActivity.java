@@ -120,4 +120,10 @@ public class LoginActivity extends AppCompatActivity {
 
         VolleySingleton.getInstance(this).addToRequestQueue(stringRequest);
     }
+
+    public void onClickRegist(View view) {
+        Intent newIntent = new Intent(LoginActivity.this, RegistrationActivity.class);
+        finish();
+        startActivity(newIntent);
+    }
 }
