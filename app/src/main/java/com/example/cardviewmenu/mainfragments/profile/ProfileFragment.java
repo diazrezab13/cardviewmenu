@@ -1,14 +1,18 @@
 package com.example.cardviewmenu.mainfragments.profile;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.app.ListActivity;
 import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -48,6 +52,18 @@ public class ProfileFragment extends Fragment {
         String[] listProfileMenu2 = getResources().getStringArray(R.array.array_profile_bottom);
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, listProfileMenu2);
         listView2.setAdapter(adapter2);
+
+        listView2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 1){
+                    SharedPrefManager.getInstance(view.getContext()).logout();
+                    ((Activity) view.getContext()).finish();
+                }
+                else
+                    Toast.makeText(getActivity().getApplicationContext(),"Click Listitem Number " + position, Toast.LENGTH_LONG).show();
+            }
+        });
 
         return view;
     }

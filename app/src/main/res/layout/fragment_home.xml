@@ -58,24 +58,12 @@
                     android:id="@+id/buttonGTicket"
                     android:layout_width="60dp"
                     android:layout_height="30dp"
-                    android:layout_marginLeft="150dp"
+                    android:layout_marginLeft="225dp"
                     android:layout_marginTop="20dp"
                     android:layout_toEndOf="@id/TxtUser2"
                     android:background="@android:color/transparent"
                     android:text="@string/txt_gticket"
                     android:textSize="10dp" />
-
-
-                    <Button
-                        android:id="@+id/buttonLogout"
-                        android:layout_width="60dp"
-                        android:layout_height="30dp"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_toEndOf="@+id/buttonGTicket"
-                        android:background="@android:color/transparent"
-                        android:text="Logout"
-                        android:textSize="10dp" />
 
                 </RelativeLayout>
 

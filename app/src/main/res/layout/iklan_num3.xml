@@ -4,14 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <ImageView
+        android:id="@+id/imgiklan3"
         android:layout_width="match_parent"
         android:layout_height="175dp"
-        android:text="IKLAN 3"
         android:textAlignment="center"
         android:gravity="center"
         android:textColor="@color/white"
         android:textSize="20sp"
-        android:background="@color/colorPrimaryDark"
         />
 </LinearLayout>
