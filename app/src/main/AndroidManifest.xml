@@ -23,6 +23,7 @@
         <activity android:name=".LandingActivity"/>
         <activity android:name=".LoginActivity"/>
         <activity android:name=".GameActivity"/>
+        <activity android:name=".RegistrationActivity"/>
         <activity android:name=".MainActivity"/>
         <activity android:name=".MpoActivity"/>
         <activity android:name=".pulsafragments.PulsaActivity"/>

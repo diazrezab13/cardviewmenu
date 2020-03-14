@@ -3,6 +3,7 @@ package com.example.cardviewmenu;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -27,14 +28,15 @@ import java.util.Map;
 public class GTicketActivity extends AppCompatActivity {
 
     TextView txtTicketRemain;
+    Button btnMain;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gticket);
+        btnMain = (Button) findViewById(R.id.buttonPlay);
+        btnMain.setEnabled(false);
         getTicket();
-
-
     }
     public void onClickPlay (View v){
         validateTicket();
@@ -68,6 +70,7 @@ public class GTicketActivity extends AppCompatActivity {
                         txtTicketRemain.setText(arrayTicket.length() + " G-Ticket");
 
                         progressBar.setVisibility(View.GONE);
+                        btnMain.setEnabled(true);
                         Toast.makeText(getApplicationContext(), obj.getString("message"), Toast.LENGTH_SHORT).show();
                     } else {
                         txtTicketRemain = findViewById(R.id.txtGTicket);
