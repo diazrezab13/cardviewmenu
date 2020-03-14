@@ -35,4 +35,27 @@ public class KudaGameActivity extends AppCompatActivity {
         finish();
         startActivity(newIntent);
     }
+
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
+
+        if(wv.canGoBack()){
+            wv.goBack();
+        }
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Mainkan Hingga Akhir Untuk Mendapatkan Hadiah !", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce=false;
+            }
+        }, 10);
+    }
 }
