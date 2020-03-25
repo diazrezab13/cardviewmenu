@@ -22,8 +22,9 @@ public class KudaGameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kuda_game);
-        URL = "https://kelompoktigab.000webhostapp.com/lalala/index.html";
+        URL = "https://kelompoktigab.000webhostapp.com/dakota/index.html";
         wv=(WebView)findViewById(R.id.web);
+        wv.addJavascriptInterface(new WebAppInterface(this), "AndroidInterface");
         wv.getSettings().setJavaScriptEnabled(true);
         wv.loadUrl(URL);
         wv.setWebViewClient(new WebViewClient());

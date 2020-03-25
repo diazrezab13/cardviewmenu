@@ -15,6 +15,10 @@ public class SharedPrefManager {
     private static final String KEY_GENDER = "keygender";
     private static final String KEY_LOGIN_COUNT = "keylogincount";
     private static final String KEY_ID = "keyid";
+    private static final String KEY_TICKET_ID = "keyticketid";
+    private static final String KEY_USER_ID = "keyuserid";
+    private static final String KEY_HAS_USED = "keyhasused";
+
 
     private static SharedPrefManager mInstance;
     private static Context mCtx;
@@ -43,6 +47,15 @@ public class SharedPrefManager {
         editor.apply();
     }
 
+    public void userPlay(Ticket ticket) {
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt(KEY_TICKET_ID, ticket.getId());
+        editor.putInt(KEY_USER_ID, ticket.getUser_id());
+        editor.putBoolean(KEY_HAS_USED, ticket.gethasUsed());
+        editor.apply();
+    }
+
     //this method will checker whether user is already logged in or not
     public boolean isLoggedIn() {
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
@@ -58,6 +71,16 @@ public class SharedPrefManager {
                 sharedPreferences.getString(KEY_EMAIL, null),
                 sharedPreferences.getString(KEY_GENDER, null),
                 sharedPreferences.getInt(KEY_LOGIN_COUNT, 0)
+        );
+    }
+
+    //this method will give the logged in user
+    public Ticket getTicket() {
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        return new Ticket(
+                sharedPreferences.getInt(KEY_TICKET_ID, -1),
+                sharedPreferences.getInt(KEY_USER_ID, 0),
+                sharedPreferences.getBoolean(KEY_HAS_USED, false)
         );
     }
 

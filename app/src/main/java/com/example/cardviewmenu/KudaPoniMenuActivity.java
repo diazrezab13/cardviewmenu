@@ -73,9 +73,7 @@ public class KudaPoniMenuActivity extends AppCompatActivity {
     }
 
     public void onClickPlay (View v){
-        Intent newIntent = new Intent(KudaPoniMenuActivity.this, KudaGameActivity.class);
-        finish();
-        startActivity(newIntent);
+        postUseTicket();
     }
 
     public void onClickPoin (View v){
@@ -123,6 +121,55 @@ public class KudaPoniMenuActivity extends AppCompatActivity {
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
                 params.put("user_id", user_id);
+                return params;
+            }
+        };
+
+        VolleySingleton.getInstance(getApplicationContext()).addToRequestQueue(stringRequest);
+    }
+
+    private void postUseTicket(){
+        User user = SharedPrefManager.getInstance(getApplicationContext()).getUser();
+        Ticket ticket = SharedPrefManager.getInstance(getApplicationContext()).getTicket();
+
+        final String user_id = String.valueOf(user.getId());
+        final String ticket_id = String.valueOf(ticket.getId());
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URLs.USE_TICKET, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+                try {
+                    //converting response to json object
+                    JSONObject obj = new JSONObject(response);
+
+                    //if no error in response
+                    if (!obj.getBoolean("error")) {
+                        Toast.makeText(getApplicationContext(), obj.getString("message"), Toast.LENGTH_SHORT).show();
+
+                        Intent newIntent = new Intent(KudaPoniMenuActivity.this, KudaGameActivity.class);
+                        finish();
+                        startActivity(newIntent);
+
+                    } else {
+                        Toast.makeText(getApplicationContext(), obj.getString("message"), Toast.LENGTH_SHORT).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("user_id", user_id);
+                params.put("ticket_id", ticket_id);
                 return params;
             }
         };

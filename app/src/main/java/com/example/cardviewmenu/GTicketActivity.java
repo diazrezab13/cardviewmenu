@@ -66,8 +66,19 @@ public class GTicketActivity extends AppCompatActivity {
                     //if no error in response
                     if (!obj.getBoolean("error")) {
                         JSONArray arrayTicket = obj.getJSONArray("data");
+
+                        JSONObject tiket = (JSONObject) arrayTicket.get(0);
+
+                        Ticket data = new Ticket(
+                                tiket.getInt("id"),
+                                tiket.getInt("user_id"),
+                                tiket.getBoolean("has_used")
+                        );
+
                         txtTicketRemain = findViewById(R.id.txtGTicket);
                         txtTicketRemain.setText(arrayTicket.length() + " G-Ticket");
+
+                        SharedPrefManager.getInstance(getApplicationContext()).userPlay(data);
 
                         progressBar.setVisibility(View.GONE);
                         btnMain.setEnabled(true);
